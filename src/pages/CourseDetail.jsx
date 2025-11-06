@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Clock, GraduationCap, Users, ArrowLeft, Building, ClipboardCheck, Rocket, CheckCircle2, Award, ShieldCheck } from 'lucide-react';
 import './CourseDetail.css';
 

@@ -4,7 +4,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+  background: rgb(35, 65, 75);
   backdrop-filter: blur(20px);
   padding: 0.8rem 2rem;
   box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
@@ -115,7 +115,7 @@
 
 /* Scroll effect */
 .header.scrolled {
-  background: linear-gradient(135deg, #0a0f1f 0%, #1e3a8a 50%, #2563eb 100%);
+  background: rgb(35, 65, 75);
   backdrop-filter: blur(25px);
   box-shadow: 0 4px 25px rgba(37, 99, 235, 0.35);
   padding: 0.5rem 2rem;
@@ -172,7 +172,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+    background: rgb(35, 65, 75);
     backdrop-filter: blur(25px);
     flex-direction: column;
     gap: 0;

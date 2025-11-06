@@ -1,6 +1,6 @@
 .feedback-section {
-  background: linear-gradient(135deg, #0a0f1f, #13294b);
-  color: #fff;
+  background: white;
+  color: #000000;
   text-align: center;
   padding: 80px 20px;
   font-family: "Poppins", sans-serif;
@@ -10,7 +10,10 @@
 .feedback-section h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #00bfff;
+  background: linear-gradient(90deg, #60a5fa, rgb(35, 65, 75), #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 600;
 }
 
@@ -23,12 +26,11 @@
 
 .feedback-card {
   width: 300px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #f8f9fa;
   border-radius: 18px;
   padding: 1.8rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
   min-height: 160px;
   transition: all 0.30s ease;
 }
@@ -37,12 +39,12 @@
   font-size: 1rem;
   line-height: 1.6;
   font-style: italic;
-  color: #e6e6e6;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .feedback-name {
-  color: #00d4ff;
+  color: #2563eb;
   font-weight: 600;
 }
 
@@ -50,7 +52,7 @@
   display: inline-block;
   width: 10px;
   height: 1rem;
-  background-color: #00d4ff;
+  background-color: #3b82f6;
   margin-left: 4px;
   animation: blink 1s infinite;
 }
@@ -63,23 +65,24 @@
 /* Stats Section */
 .stats-section {
   margin-top: 70px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #f8f9fa;
   padding: 40px;
   border-radius: 20px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
 }
 
 .stats-section h3 {
-  color: #00d4ff;
+  color: rgb(35, 65, 75);
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
 
 .stats-section p {
-  color: #ccc;
+  color: #000000;
   font-size: 1.1rem;
 }
 

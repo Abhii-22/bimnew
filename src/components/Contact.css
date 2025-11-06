@@ -1,6 +1,6 @@
 .contact-section {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
-  color: white;
+  background: white;
+  color: #000000;
   padding: 6rem 2rem;
   font-family: 'Inter', sans-serif;
   display: flex;
@@ -27,14 +27,15 @@
 .contact-title {
   font-size: 2.8rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #60a5fa, #10b981);
+  background: linear-gradient(90deg, #60a5fa, rgb(35, 65, 75), #06b6d4);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .contact-subtitle {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #000000;
   margin-bottom: 1.5rem;
   max-width: 500px;
 }
@@ -49,15 +50,15 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: #f8f9fa;
   padding: 1rem 1.2rem;
   border-radius: 12px;
-  backdrop-filter: blur(10px);
+  border: 1px solid #e9ecef;
   transition: all 0.3s ease;
 }
 
 .info-item:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: #f1f3f5;
   transform: translateY(-3px);
 }
 
@@ -71,7 +72,7 @@
   height: 420px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
 }
 
@@ -110,10 +111,11 @@
 
 /* Footer Styles */
 .footer {
-  background-color: #0f172a;
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #f8f9fa;
+  color: #000000;
   padding: 4rem 2rem 2rem;
   font-family: 'Inter', sans-serif;
+  border-top: 1px solid #e9ecef;
 }
 
 .footer-container {
@@ -126,7 +128,7 @@
 }
 
 .footer-about h3, .footer-links h4, .footer-social h4 {
-  color: white;
+  color: #000000;
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
@@ -163,13 +165,13 @@
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.7);
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #60a5fa;
+  color: #2563eb;
 }
 
 .social-icons {
@@ -180,12 +182,12 @@
 }
 
 .social-icons a {
-  color: rgba(255, 255, 255, 0.7);
+  color: #000000;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #60a5fa;
+  color: #2563eb;
 }
 
 @media (max-width: 768px) {
@@ -204,7 +206,7 @@
   text-align: center;
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #dee2e6;
   font-size: 0.9rem;
 }
 
