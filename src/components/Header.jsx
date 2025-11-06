@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { FiHome, FiInfo, FiBookOpen, FiPhone } from 'react-icons/fi';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaBars, FaTimes, FaHome, FaInfoCircle, FaBook, FaEnvelope } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,11 +27,19 @@ const Header = () => {
   };
 
   const handleHomeClick = (e) => {
-    if (location.pathname === '/') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    e.preventDefault();
     closeMobileMenu();
+    
+    if (location.pathname === '/') {
+      // If already on home page, just scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // If on another page, navigate to home page and scroll to top
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   const handleSmoothScroll = (e) => {
@@ -57,41 +66,45 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="main-nav">
-        <Link to="/" className="logo" onClick={closeMobileMenu}>
-          <img src="/images/Medini white  logo.png" alt="BIMcourse Logo" className="logo-image" />
-        </Link>
-        
         <button 
           className="mobile-menu-btn" 
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
         >
-          {isMobileMenuOpen ? '✕' : '☰'}
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
+
+        <Link to="/" className="logo" onClick={closeMobileMenu}>
+          <img src="/images/medini.png" alt="Medini Logo" className="logo-image medini-logo" />
+        </Link>
         
+        
+      </nav>
+      
+      <nav className="secondary-nav">
         <ul className={isMobileMenuOpen ? 'active' : ''}>
           <li>
             <Link to="/" onClick={handleHomeClick}>
-              <FiHome className="nav-icon" />
-              Home
+              <FaHome className="nav-icon" />
+              <span>Home</span>
             </Link>
           </li>
           <li>
             <Link to="/#about" onClick={handleSmoothScroll}>
-              <FiInfo className="nav-icon" />
-              About
+              <FaInfoCircle className="nav-icon" />
+              <span>About</span>
             </Link>
           </li>
           <li>
             <Link to="/#courses" onClick={handleSmoothScroll}>
-              <FiBookOpen className="nav-icon" />
-              Courses
+              <FaBook className="nav-icon" />
+              <span>Courses</span>
             </Link>
           </li>
           <li>
             <Link to="/#contact" onClick={handleSmoothScroll}>
-              <FiPhone className="nav-icon" />
-              Contact
+              <FaEnvelope className="nav-icon" />
+              <span>Contact</span>
             </Link>
           </li>
         </ul>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Clock, GraduationCap, Users, ArrowLeft, Building, ClipboardCheck, Rocket, CheckCircle2, Award, ShieldCheck } from 'lucide-react';
+import { Clock, GraduationCap, Users, ArrowLeft, Building, ClipboardCheck, Rocket, CheckCircle2, Award, ShieldCheck, Phone } from 'lucide-react';
 import './CourseDetail.css';
 
 const ServiceDetail = () => {
@@ -10,6 +10,19 @@ const ServiceDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const scrollToContact = () => {
+    // Navigate to home page with contact hash
+    navigate('/#contact');
+    
+    // Fallback: try to find and scroll to contact section after navigation
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 500);
+  };
 
   const servicesData = {
     // Course-style detail for BIM for Architecture
@@ -159,23 +172,40 @@ const ServiceDetail = () => {
               <>
                 <section className="curriculum">
                   <h2>Curriculum</h2>
-                  <ul>
-                    {service.curriculum.map((item, idx) => (
-                      <li key={idx}>
-                        <span>{idx + 1}</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="curriculum-contact">
+                    <p className="curriculum-contact-text">
+                      Want to learn more about our comprehensive curriculum? Our expert instructors are here to guide you through every aspect of BIM training and help you achieve your career goals.
+                    </p>
+                    <button className="contact-us-btn" onClick={scrollToContact}>
+                      Contact Us - More Details
+                    </button>
+                  </div>
                 </section>
                 <section className="learning-outcomes">
                   <h2>What You'll Learn</h2>
-                  <div className="outcomes-grid">
-                    {service.learningOutcomes.map((o, i) => (
-                      <li key={i}>
-                        <CheckCircle2 size={18} /> {o}
-                      </li>
-                    ))}
+                  <div className="outcomes-container">
+                    {service.learningOutcomes.map((outcome, index) => {
+                      const descriptions = [
+                        'Master advanced modeling techniques and industry best practices',
+                        'Develop analytical skills for performance optimization',
+                        'Create professional documentation and construction drawings',
+                        'Learn collaborative workflows and team coordination strategies'
+                      ];
+                      return (
+                        <div key={index} className="outcome-card">
+                          <div className="outcome-icon">
+                            <CheckCircle2 size={24} />
+                          </div>
+                          <div className="outcome-content">
+                            <h4>{outcome}</h4>
+                            <p>{descriptions[index] || 'Gain practical skills and real-world experience'}</p>
+                          </div>
+                          <div className="outcome-number">
+                            <span>{index + 1}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </section>
               </>

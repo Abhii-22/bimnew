@@ -104,7 +104,7 @@ const Feedback = () => {
       </div>
 
       <div className="stats-section">
-        <h3>🌟 1000+ Happy Learners</h3>
+        <h3>🌟 20,000+ Happy Learners</h3>
         <p>Building successful careers with real-world training and placements.</p>
       </div>
     </section>
