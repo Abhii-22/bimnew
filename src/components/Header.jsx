@@ -80,9 +80,22 @@ const Header = () => {
     if (targetId) {
       const elem = document.getElementById(targetId);
       if (elem) {
-        elem.scrollIntoView({
-          behavior: 'smooth',
-        });
+        // Navigate to home page first if not already there
+        if (location.pathname !== '/') {
+          navigate('/');
+          setTimeout(() => {
+            const element = document.getElementById(targetId);
+            if (element) {
+              element.scrollIntoView({
+                behavior: 'smooth',
+              });
+            }
+          }, 100);
+        } else {
+          elem.scrollIntoView({
+            behavior: 'smooth',
+          });
+        }
       }
     } else {
       window.scrollTo({

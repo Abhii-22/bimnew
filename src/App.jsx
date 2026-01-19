@@ -16,16 +16,9 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
-    // Handle hash scrolling
-    if (location.hash) {
-      const element = document.getElementById(location.hash.replace('#', ''));
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    }
-  }, [location]);
+    // Reset scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="App">
