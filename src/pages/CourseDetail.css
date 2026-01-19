@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chandara:wght@400;500;600;700&display=swap');
+
 :root {
   --dark-bg: #1A1A1A;
   --content-bg: #f8f9fa;
@@ -13,7 +15,7 @@
   min-height: 100vh;
   padding: 2rem 1rem 2rem;
   color: var(--text-secondary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Chandara', sans-serif;
 }
 
 .course-detail-container {

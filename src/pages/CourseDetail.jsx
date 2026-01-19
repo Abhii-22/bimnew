@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Clock, GraduationCap, Users, ArrowLeft, Building, ClipboardCheck, Rocket, CheckCircle2, Award, ShieldCheck, Phone } from 'lucide-react';
+import { FaClock, FaGraduationCap, FaUsers, FaArrowLeft, FaBuilding, FaClipboardCheck, FaRocket, FaCheckCircle, FaAward, FaShieldAlt, FaPhone } from 'react-icons/fa';
 import './CourseDetail.css';
 
 const ServiceDetail = () => {
@@ -116,7 +116,7 @@ const ServiceDetail = () => {
       <div className="course-detail-container">
         <div className="back-button-container">
           <button onClick={() => navigate(-1)} className="back-link">
-            <ArrowLeft size={16} /> Back to Courses
+            <FaArrowLeft size={16} /> Back to Courses
           </button>
         </div>
         
@@ -130,17 +130,17 @@ const ServiceDetail = () => {
           {service.duration && service.level && service.audience ? (
             <>
               <div className="info-card">
-                <Clock className="info-icon" size={28} />
+                <FaClock className="info-icon" size={28} />
                 <span>Duration</span>
                 <strong>{service.duration}</strong>
               </div>
               <div className="info-card">
-                <GraduationCap className="info-icon" size={28} />
+                <FaGraduationCap className="info-icon" size={28} />
                 <span>Level</span>
                 <strong>{service.level}</strong>
               </div>
               <div className="info-card">
-                <Users className="info-icon" size={28} />
+                <FaUsers className="info-icon" size={28} />
                 <span>Audience</span>
                 <strong>{service.audience}</strong>
               </div>
@@ -148,17 +148,17 @@ const ServiceDetail = () => {
           ) : (
             <>
               <div className="info-card">
-                <Clock className="info-icon" size={28} />
+                <FaClock className="info-icon" size={28} />
                 <span>Timeline</span>
                 <strong>Project-based</strong>
               </div>
               <div className="info-card">
-                <Users className="info-icon" size={28} />
+                <FaUsers className="info-icon" size={28} />
                 <span>Expert Team</span>
                 <strong>Architects & Designers</strong>
               </div>
               <div className="info-card">
-                <ClipboardCheck className="info-icon" size={28} />
+                <FaClipboardCheck className="info-icon" size={28} />
                 <span>Quality</span>
                 <strong>Standards Compliant</strong>
               </div>
@@ -194,7 +194,7 @@ const ServiceDetail = () => {
                       return (
                         <div key={index} className="outcome-card">
                           <div className="outcome-icon">
-                            <CheckCircle2 size={24} />
+                            <FaCheckCircle size={24} />
                           </div>
                           <div className="outcome-content">
                             <h4>{outcome}</h4>
@@ -216,7 +216,7 @@ const ServiceDetail = () => {
                   {service.serviceDetails && service.serviceDetails.map((item, index) => (
                     <div key={index} className="service-detail-card">
                       <div className="detail-icon">
-                        <CheckCircle2 size={24} />
+                        <FaCheckCircle size={24} />
                       </div>
                       <div className="detail-content">
                         <h3>{item}</h3>
@@ -232,7 +232,7 @@ const ServiceDetail = () => {
           <aside className="course-sidebar">
             <div className="sidebar-widget">
               <div className="provider-summary">
-                <Building size={32} className="provider-icon" />
+                <FaBuilding size={32} className="provider-icon" />
                 <h3>{service.curriculum ? 'Course Information' : 'Service Information'}</h3>
               </div>
               
@@ -243,10 +243,10 @@ const ServiceDetail = () => {
 
               {service.prerequisites ? (
                 <div className="prerequisites-section">
-                  <h4><ShieldCheck className="prereq-icon" size={18} /> Prerequisites</h4>
+                  <h4><FaShieldAlt className="prereq-icon" size={18} /> Prerequisites</h4>
                   <ul>
                     {service.prerequisites.map((p, i) => (
-                      <li key={i}><ShieldCheck size={16} className="prereq-icon" /> {p}</li>
+                      <li key={i}><FaShieldAlt size={16} className="prereq-icon" /> {p}</li>
                     ))}
                   </ul>
                 </div>
@@ -254,15 +254,15 @@ const ServiceDetail = () => {
                 <div className="why-choose-us">
                   <h4>Why Choose Us?</h4>
                   <ul>
-                    <li><Award size={18} /> <span>Industry Experts</span></li>
-                    <li><Users size={18} /> <span>Collaborative Approach</span></li>
-                    <li><ShieldCheck size={18} /> <span>Quality Assured</span></li>
+                    <li><FaAward size={18} /> <span>Industry Experts</span></li>
+                    <li><FaUsers size={18} /> <span>Collaborative Approach</span></li>
+                    <li><FaShieldAlt size={18} /> <span>Quality Assured</span></li>
                   </ul>
                 </div>
               )}
               
               <button className="enroll-now-btn">
-                <Rocket size={18} />
+                <FaRocket size={18} />
                 {service.curriculum ? 'Enroll Now' : 'Get Started'}
               </button>
             </div>

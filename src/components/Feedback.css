@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Chandara:wght@400;500;600;700&display=swap');
+
 .feedback-section {
   background: white;
   color: #000000;
   text-align: center;
   padding: 80px 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Chandara', sans-serif;
   overflow: hidden;
 }
 

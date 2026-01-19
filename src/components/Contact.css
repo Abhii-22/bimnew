@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Chandara:wght@400;500;600;700&display=swap');
+
 .contact-section {
   background: white;
   color: #000000;
   padding: 8rem 2rem 6rem 2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Chandara', sans-serif;
   display: flex;
   justify-content: center;
 }
@@ -114,7 +116,7 @@
   background-color: #f8f9fa;
   color: #000000;
   padding: 4rem 2rem 2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Chandara', sans-serif;
   border-top: 1px solid #e9ecef;
 }
 

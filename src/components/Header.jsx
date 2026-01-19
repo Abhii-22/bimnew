@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaHome, FaInfoCircle, FaBook, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaInfoCircle, FaBook, FaEnvelope, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
@@ -8,6 +8,26 @@ const Header = () => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCourseDropdownOpen, setIsCourseDropdownOpen] = useState(false);
+
+  // Available courses
+  const courses = [
+    {
+      id: 'bim-for-architecture',
+      title: 'BIM for Architecture',
+      description: 'Comprehensive training in BIM workflows for architectural design'
+    },
+    {
+      id: 'bim-for-construction',
+      title: 'BIM for Construction',
+      description: 'Covers collaborative construction management, BIM standards'
+    },
+    {
+      id: 'bim-for-infrastructure',
+      title: 'BIM for Infrastructure',
+      description: 'BIM methodologies for infrastructure projects including roads, bridges'
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +44,16 @@ const Header = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const toggleCourseDropdown = () => {
+    setIsCourseDropdownOpen(!isCourseDropdownOpen);
+  };
+
+  const handleCourseClick = (courseId) => {
+    navigate(`/service/${courseId}`);
+    setIsCourseDropdownOpen(false);
+    closeMobileMenu();
   };
 
   const handleHomeClick = (e) => {
@@ -95,11 +125,23 @@ const Header = () => {
               <span>About</span>
             </Link>
           </li>
-          <li>
-            <Link to="/#courses" onClick={handleSmoothScroll}>
+          <li className="course-dropdown">
+            <button className="course-dropdown-btn" onClick={toggleCourseDropdown}>
               <FaBook className="nav-icon" />
               <span>Courses</span>
-            </Link>
+              <FaChevronDown className={`dropdown-arrow ${isCourseDropdownOpen ? 'open' : ''}`} />
+            </button>
+            <div className={`dropdown-menu ${isCourseDropdownOpen ? 'open' : ''}`}>
+              {courses.map((course) => (
+                <button
+                  key={course.id}
+                  className="dropdown-item"
+                  onClick={() => handleCourseClick(course.id)}
+                >
+                  {course.title}
+                </button>
+              ))}
+            </div>
           </li>
           <li>
             <Link to="/#contact" onClick={handleSmoothScroll}>

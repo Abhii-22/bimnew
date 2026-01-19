@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Chandara:wght@400;500;600;700&display=swap');
+
 .about-section {
   background: white;
   color: #000000;
   padding: 6rem 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Chandara', sans-serif;
   width: 100%;
 }
 

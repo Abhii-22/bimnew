@@ -46,11 +46,11 @@
 
 .secondary-nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Changed from center to left */
   gap: 0.25rem;
   list-style: none;
   margin: 0;
-  padding: 0.3rem 0;
+  padding: 0.3rem 2rem; /* Added horizontal padding */
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -97,6 +97,93 @@
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
+}
+
+/* Course dropdown */
+.course-dropdown {
+  position: relative;
+}
+
+.course-dropdown-btn {
+  color: rgba(255, 255, 255, 0.8);
+  background: none;
+  border: none;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.course-dropdown-btn:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 280px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .nav-icon {

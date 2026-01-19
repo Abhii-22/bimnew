@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaClock, FaUsers, FaStar, FaChartLine, FaTag } from "react-icons/fa";
 import "./Course.css";
 
 const servicesData = [
@@ -59,10 +60,26 @@ const Services = () => {
 
             <div className="course-content">
               <h3>{service.title}</h3>
-              <p className="course-meta">
-                🕒 {service.duration} &nbsp; | &nbsp; 👥 {service.students}
-              </p>
+              <div className="course-meta">
+                <div className="meta-item">
+                  <FaClock className="meta-icon" />
+                  <span>{service.duration}</span>
+                </div>
+                <div className="meta-item">
+                  <FaUsers className="meta-icon" />
+                  <span>{service.students}</span>
+                </div>
+                <div className="meta-item">
+                  <FaChartLine className="meta-icon" />
+                  <span>{service.successRate} Success</span>
+                </div>
+                <div className="meta-item">
+                  <FaStar className="meta-icon" />
+                  <span>{service.rating}</span>
+                </div>
+              </div>
               <div className="course-tags">
+                <FaTag className="tags-icon" />
                 {service.tags.map((tag, i) => (
                   <span key={i}>{tag}</span>
                 ))}
