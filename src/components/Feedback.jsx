@@ -74,7 +74,7 @@ const Feedback = () => {
         observer.unobserve(currentRef);
       }
     };
-  }, []);
+  }, [sectionRef]);
 
   useEffect(() => {
     if (!isSectionVisible) return;
