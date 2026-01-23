@@ -33,8 +33,11 @@
   padding: 1.8rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid #e9ecef;
-  min-height: 160px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
   transition: all 0.30s ease;
+  overflow: hidden;
 }
 
 .feedback-text {
@@ -43,6 +46,8 @@
   font-style: italic;
   color: #000000;
   margin-bottom: 1rem;
+  flex: 1;
+  overflow: hidden;
 }
 
 .feedback-name {

@@ -12,16 +12,8 @@ const ServiceDetail = () => {
   }, []);
 
   const scrollToContact = () => {
-    // Navigate to home page with contact hash
-    navigate('/#contact');
-    
-    // Fallback: try to find and scroll to contact section after navigation
-    setTimeout(() => {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 500);
+    // Navigate to contact page
+    navigate('/contact');
   };
 
   const servicesData = {

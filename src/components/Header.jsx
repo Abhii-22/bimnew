@@ -133,7 +133,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#about" onClick={handleSmoothScroll}>
+            <Link to="/about" onClick={closeMobileMenu}>
               <FaInfoCircle className="nav-icon" />
               <span>About</span>
             </Link>
@@ -157,7 +157,7 @@ const Header = () => {
             </div>
           </li>
           <li>
-            <Link to="/#contact" onClick={handleSmoothScroll}>
+            <Link to="/contact" onClick={closeMobileMenu}>
               <FaEnvelope className="nav-icon" />
               <span>Contact</span>
             </Link>

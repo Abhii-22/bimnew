@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import About from './components/About';
 import Feedback from './components/Feedback';
@@ -24,10 +25,12 @@ function AppContent() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<><Home /><About /><Course /><Feedback /><Contact /></>} />
+        <Route path="/" element={<><Home /><Course /><Feedback /></>} />
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service/:serviceId" element={<CourseDetail />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
