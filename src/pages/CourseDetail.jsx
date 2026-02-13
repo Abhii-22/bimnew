@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FaClock, FaGraduationCap, FaUsers, FaArrowLeft, FaBuilding, FaClipboardCheck, FaRocket, FaCheckCircle, FaAward, FaShieldAlt, FaStar, FaLightbulb, FaTrophy } from 'react-icons/fa';
+import { FaClock, FaGraduationCap, FaUsers, FaBuilding, FaClipboardCheck, FaRocket, FaCheckCircle, FaAward, FaStar, FaLightbulb, FaTrophy } from 'react-icons/fa';
 import './CourseDetail.css';
 
 const ServiceDetail = () => {
