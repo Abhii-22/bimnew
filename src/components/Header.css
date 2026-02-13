@@ -4,7 +4,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background: rgb(35, 65, 75);
   backdrop-filter: blur(20px);
   padding: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -125,9 +125,9 @@
 
 .course-dropdown-btn:hover {
   color: #fff;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: rgb(35, 65, 75);
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 15px rgba(35, 65, 75, 0.3);
 }
 
 .dropdown-arrow {
@@ -143,7 +143,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background: rgb(35, 65, 75);
   backdrop-filter: blur(20px);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -199,9 +199,9 @@
 
 .secondary-nav a:hover {
   color: #fff;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: rgb(35, 65, 75);
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 15px rgba(35, 65, 75, 0.3);
 }
 
 .secondary-nav a:active {
@@ -210,14 +210,14 @@
 
 /* Active state for current page */
 .secondary-nav a.active {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: rgb(35, 65, 75);
   color: #fff;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 15px rgba(35, 65, 75, 0.3);
 }
 
 /* Scroll effect */
 .header.scrolled {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334135 100%);
+  background: rgb(35, 65, 75);
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
@@ -276,7 +276,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #1e293b 0%, #334135 50%, #475569 100%);
+    background: rgb(35, 65, 75);
     backdrop-filter: blur(20px);
     flex-direction: column;
     gap: 0;

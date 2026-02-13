@@ -72,7 +72,7 @@ const Home = () => {
         <div className="slider-logos">
           <img src="/images/Medini logo White-1[1] (1).png" alt="Medini Logo" className="logo-item" />
           <img src="/images/medini.png" alt="Medini Logo" className="logo-item" />
-          <img src="/images/BIM Construct.png" alt="BIM Construct Logo" className="logo-item" />
+          <img src="/images/Credly White.png" alt="BIM Construct Logo" className="logo-item" />
         </div>
       </div>
     </div>
