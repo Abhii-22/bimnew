@@ -72,40 +72,6 @@ const Header = () => {
     }
   };
 
-  const handleSmoothScroll = (e) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute('href');
-    const targetId = href.replace(/.*#/, '');
-
-    if (targetId) {
-      const elem = document.getElementById(targetId);
-      if (elem) {
-        // Navigate to home page first if not already there
-        if (location.pathname !== '/') {
-          navigate('/');
-          setTimeout(() => {
-            const element = document.getElementById(targetId);
-            if (element) {
-              element.scrollIntoView({
-                behavior: 'smooth',
-              });
-            }
-          }, 100);
-        } else {
-          elem.scrollIntoView({
-            behavior: 'smooth',
-          });
-        }
-      }
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }
-    closeMobileMenu();
-  };
-
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="main-nav">

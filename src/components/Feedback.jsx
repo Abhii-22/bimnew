@@ -64,17 +64,17 @@ const Feedback = () => {
       { threshold: 0.1 } // Trigger when 10% of the element is visible
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentElement = sectionRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      const currentRef = sectionRef.current;
-      if (currentRef) {
-        observer.unobserve(currentRef);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
-  }, [sectionRef]);
+  }, []);
 
   useEffect(() => {
     if (!isSectionVisible) return;

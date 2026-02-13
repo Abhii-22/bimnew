@@ -1,5 +1,4 @@
 import React from "react";
-import { Linkedin, Instagram } from 'lucide-react';
 import "./Contact.css";
 
 const Contact = () => {
