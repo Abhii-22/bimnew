@@ -3,7 +3,7 @@
   min-width: 320px; /* Or your preferred minimum width */
   width: 100%;
   overflow-x: hidden;
-  padding-top: 80px; /* Adjust this value to match your header's height */
+  padding-top: 70px; /* Adjust this value to match your header's height */
 }
 
 .App-logo {

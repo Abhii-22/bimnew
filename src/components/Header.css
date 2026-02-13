@@ -309,11 +309,11 @@
   }
 
   .medini-logo {
-    display: block;
-    position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 40px;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
   }
 }
 
@@ -323,8 +323,7 @@
   }
   
   .medini-logo {
-    right: 1rem;
-    height: 40px;
+    height: 35px;
   }
   
   .secondary-nav a {
