@@ -1,0 +1,78 @@
+/* Alumni Scrolling Section */
+.alumni-scrolling-section {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 40px 0 20px 0;
+}
+
+.alumni-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.alumni-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.alumni-scrolling-container {
+  display: flex;
+  animation: scrollRightToLeft 30s linear infinite;
+  width: fit-content;
+}
+
+.alumni-logo-item {
+  flex-shrink: 0;
+  margin: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 160px;
+}
+
+.alumni-scrolling-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.alumni-scrolling-logo:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.alumni-scrolling-section:hover .alumni-scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .alumni-logo-item {
+    margin: 0 25px;
+    height: 65px;
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .alumni-logo-item {
+    margin: 0 20px;
+    height: 50px;
+    width: 100px;
+  }
+}

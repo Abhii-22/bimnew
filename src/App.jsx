@@ -8,6 +8,9 @@ import Feedback from './components/Feedback';
 import Contact from './components/Contact';
 import Course from './components/Course';
 import CourseDetail from './pages/CourseDetail';
+import PartnersSection from './components/PartnersSection';
+import OurAlumnies from './components/ouralumnies';
+import Ourinstitutionalpartners from './components/Ourinstitutionalpartners';
 
 
 
@@ -25,7 +28,7 @@ function AppContent() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<><Home /><Course /><Feedback /></>} />
+        <Route path="/" element={<><Home /><PartnersSection /><OurAlumnies /><Ourinstitutionalpartners /><Feedback /></>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service/:serviceId" element={<CourseDetail />} />

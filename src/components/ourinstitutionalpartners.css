@@ -1,0 +1,79 @@
+/* Institutional Partners Scrolling Section */
+.institutional-scrolling-section {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 120px 0 20px 0;
+  margin-top: 60px;
+}
+
+.institutional-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.institutional-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.institutional-scrolling-container {
+  display: flex;
+  animation: scrollRightToLeft 60s linear infinite;
+  width: fit-content;
+}
+
+.institutional-logo-item {
+  flex-shrink: 0;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 160px;
+}
+
+.institutional-scrolling-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.institutional-scrolling-logo:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.institutional-scrolling-section:hover .institutional-scrolling-container {
+  animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .institutional-logo-item {
+    margin: 0 25px;
+    height: 65px;
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .institutional-logo-item {
+    margin: 0 20px;
+    height: 50px;
+    width: 100px;
+  }
+}

@@ -94,19 +94,16 @@ const Header = () => {
         <ul className={isMobileMenuOpen ? 'active' : ''}>
           <li>
             <Link to="/" onClick={handleHomeClick}>
-              <FaHome className="nav-icon" />
               <span>Home</span>
             </Link>
           </li>
           <li>
             <Link to="/about" onClick={closeMobileMenu}>
-              <FaInfoCircle className="nav-icon" />
               <span>About</span>
             </Link>
           </li>
           <li className="course-dropdown">
             <button className="course-dropdown-btn" onClick={toggleCourseDropdown}>
-              <FaBook className="nav-icon" />
               <span>Courses</span>
               <FaChevronDown className={`dropdown-arrow ${isCourseDropdownOpen ? 'open' : ''}`} />
             </button>
@@ -124,7 +121,6 @@ const Header = () => {
           </li>
           <li>
             <Link to="/contact" onClick={closeMobileMenu}>
-              <FaEnvelope className="nav-icon" />
               <span>Contact</span>
             </Link>
           </li>
