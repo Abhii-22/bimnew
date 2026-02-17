@@ -1,115 +1,139 @@
-import React, { useEffect, useState, useRef } from "react";
-import "./Feedback.css";
+import React, { useState } from 'react';
+import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import './Feedback.css';
 
-const feedbacks = [
-  { name: "Rahul S.", text: "This course gave me incredible clarity on BIM modeling. I can now visualize project details in a way I never thought possible, which is a huge boost for my career." },
-  { name: "Priya Prakash", text: "The hands-on training in BIM coordination was outstanding. Learning to avoid clashes between structural and MEP elements is a skill I'll use forever." },
-  { name: "Amit Kumar", text: "I appreciated the clear, step-by-step lessons. The 3D walkthroughs helped me grasp complex designs much better than any textbook could." },
-  { name: "Sneha Patel", text: "The course was perfectly paced and delivered on its promise. The precision of BIM planning is something I now use in all my projects. Truly professional training!" },
-  { name: "Ravi Kumar", text: "This course taught me how to make informed decisions early in the design phase. The data-driven insights I gained have been a game-changer for me." },
-  { name: "Neha Gowda", text: "I was impressed by how quickly the instructors responded to our questions and incorporated feedback into the lessons. It made me feel heard and valued as a student." },
-  { name: "Vikram Joshi", text: "The modules on clash detection and quantity take-offs were spot on. I feel much more confident in my ability to reduce site errors and improve efficiency." },
-  { name: "Kavya M.", text: "The course on BIM execution planning was clear and collaborative. It aligned perfectly with my career goals and made the learning process smooth." },
-  { name: "Saurabh Jain", text: "Learning to integrate sustainability analysis into BIM models has helped me contribute to green building targets. Excellent and forward-thinking course!" },
-  { name: "Ananya Das", text: "I’ve taken other courses before, but the practical skills and instructor engagement here stood out. I'm looking forward to taking more advanced courses with you!" },
-];
+function Feedback() {
+    const [currentTestimonial, setCurrentTestimonial] = useState(0);
+    const testimonials = [
+        {
+            quote: "It was fabulous, awesome having training with MEDINI School of design, the commitments were fulfilled as discussed on day one. The faculty was great and supportive. very happy with it. Will be definitely looking forward to do more course in early days. Thank you.",
+            author: "Srikanth Raghu",
+            title: "Bim Captain",
+            company: "ALSTOM Transport",
+            rating: 5
+        },
+        {
+            quote: "Its an essential for the present day to have an added badge in our profile without which it will not show our interest in the technology we are into. I was knowing the software, but I came to know that knowing the software and getting professional in software has a huge difference. Which I learnt from MEDINI SCHOOL OF DESIGN (MSD), supported me and my team to undergo the training and get certified. Thank you to the team of Medini School of Design(MSD) for the support and patience, great to be a part of your trainings",
+            author: "Bramarahmba M",
+            title: "Design Engineer",
+            company: "ATKINS",
+            rating: 5
+        },
+    ];
 
-// Typing speed (ms per character) and rotation duration derived from longest text
-const TYPING_SPEED = 20; // faster typing so long messages finish
-const ROTATION_MS = Math.max(...feedbacks.map(f => f.text.length)) * TYPING_SPEED + 1200; // add pause after complete
-
-const TypewriterCard = ({ text, name, isVisible }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [showName, setShowName] = useState(false);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    setDisplayedText('');
-    setShowName(false);
-    let i = 0;
-    const typingInterval = setInterval(() => {
-      if (i < text.length) {
-        setDisplayedText(text.substring(0, i + 1));
-        i++;
-      } else {
-        clearInterval(typingInterval);
-        setShowName(true);
-      }
-    }, TYPING_SPEED);
-
-    return () => clearInterval(typingInterval);
-  }, [text, isVisible]);
-
-  return (
-    <div className="feedback-card">
-      <p className="feedback-text">
-        “{displayedText}”<span className="cursor"></span>
-      </p>
-      {showName && <h4 className="feedback-name">- {name}</h4>}
-    </div>
-  );
-};
-
-const Feedback = () => {
-  const [indexes, setIndexes] = useState([0, 1, 2]);
-  const [isSectionVisible, setIsSectionVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsSectionVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    const currentElement = sectionRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
-
-    return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
+    const handleNext = () => {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     };
-  }, []);
 
-  useEffect(() => {
-    if (!isSectionVisible) return;
+    const handlePrev = () => {
+        setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    };
 
-    const interval = setInterval(() => {
-      setIndexes((prev) => [
-        (prev[0] + 3) % feedbacks.length,
-        (prev[1] + 3) % feedbacks.length,
-        (prev[2] + 3) % feedbacks.length,
-      ]);
-    }, ROTATION_MS); // Rotate after typing completes
+    const renderStars = (count) => {
+        return Array(5).fill(0).map((_, i) => (
+            <Star 
+                key={i} 
+                className={`w-5 h-5 ${i < count ? 'text-amber-400 fill-current' : 'text-gray-300'}`} 
+            />
+        ));
+    };
 
-    return () => clearInterval(interval);
-  }, [isSectionVisible]);
+    return (
+        <section className="feedback-section testimonials-section">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-16">
+                    <span className="inline-block px-4 py-1.5 text-sm font-medium text-amber-600 bg-amber-50 rounded-full mb-4">
+                        Testimonials
+                    </span>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        What Our Clients Say
+                    </h2>
+                    <p className="text-lg text-gray-600 max-w-7xl mx-auto">
+                        Hear from businesses that have transformed their operations with our solutions.
+                    </p>
+                </div>
 
-  return (
-    <section className="feedback-section" ref={sectionRef}>
-      <h2>What Our Clients Say</h2>
-      <div className="feedback-row">
-        {indexes.map((feedbackIndex, i) => (
-          <TypewriterCard
-            key={feedbackIndex} // Use a more stable key
-            text={feedbacks[feedbackIndex].text}
-            name={feedbacks[feedbackIndex].name}
-            isVisible={isSectionVisible}
-          />
-        ))}
-      </div>
+                <div className="relative max-w-7xl mx-auto text-left px-4">
+                    {/* Navigation Arrows */}
+                    <div className="flex justify-end space-x-3 mb-4">
+                        <button 
+                            onClick={handlePrev}
+                            className="p-2 rounded-full bg-gray-200 text-gray-400 shadow-md hover:bg-gray-300 transition-all duration-300"
+                            aria-label="Previous testimonial"
+                        >
+                            <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button 
+                            onClick={handleNext}
+                            className="p-2 rounded-full bg-amber-500 text-white shadow-md hover:bg-amber-600 transition-all duration-300"
+                            aria-label="Next testimonial"
+                        >
+                            <ChevronRight className="w-5 h-5" />
+                        </button>
+                    </div>
 
-      <div className="stats-section">
-        <h3>🌟 20,000+ Happy Learners</h3>
-        <p>Building successful careers with real-world training and placements.</p>
-      </div>
-    </section>
-  );
-};
+                    {/* Testimonial Card */}
+                    <div 
+                        key={currentTestimonial}
+                        className="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-500"
+                    >
+                        <div className="p-6 md:p-8 relative">
+                            <div className="absolute top-6 right-6 text-gray-200">
+                                <Quote className="w-20 h-20" />
+                            </div>
+                            
+                            <div className="relative z-10 text-left">
+                                {/* Rating */}
+                                <div className="flex justify-start mb-4">
+                                    {renderStars(testimonials[currentTestimonial].rating)}
+                                </div>
+
+                                {/* Quote */}
+                                <p className="text-xl text-gray-700 leading-relaxed mb-6 max-w-2xl">
+                                    "{testimonials[currentTestimonial].quote}"
+                                </p>
+
+                                {/* Author Info */}
+                                <div className="flex items-center pt-4 border-t border-gray-100">
+                                    <div className="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0">
+                                        {testimonials[currentTestimonial].author.split(' ').map(n => n[0]).join('')}
+                                    </div>
+                                    <div className="text-left">
+                                        <h4 className="font-semibold text-gray-900 text-lg">
+                                            {testimonials[currentTestimonial].author}
+                                        </h4>
+                                        <div className="text-sm text-gray-600">
+                                            <span>{testimonials[currentTestimonial].title}</span>
+                                            <span className="mx-2">•</span>
+                                            <span className="text-amber-500 font-medium">
+                                                {testimonials[currentTestimonial].company}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Dots Navigation */}
+                    <div className="flex justify-center mt-4 space-x-2">
+                        {testimonials.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentTestimonial(index)}
+                                className={`h-3 rounded-full transition-all duration-300 ${
+                                    currentTestimonial === index
+                                        ? 'w-8 bg-amber-500'
+                                        : 'w-3 bg-gray-300 hover:bg-gray-400'
+                                }`}
+                                aria-label={`Go to testimonial ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
 
 export default Feedback;

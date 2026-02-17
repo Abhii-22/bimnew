@@ -9,7 +9,7 @@
 
 .institutional-header {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 .institutional-title {
@@ -17,6 +17,36 @@
   font-weight: bold;
   color: #1f2937;
   margin: 0;
+}
+
+/* Main Institutional Logos */
+.main-institutional-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.main-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 140px;
+}
+
+.main-institutional-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.main-institutional-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .institutional-scrolling-container {

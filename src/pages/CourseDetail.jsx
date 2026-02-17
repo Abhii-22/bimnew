@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FaClock, FaGraduationCap, FaUsers, FaBuilding, FaClipboardCheck, FaRocket, FaCheckCircle, FaAward, FaStar, FaLightbulb, FaTrophy } from 'react-icons/fa';
 import './CourseDetail.css';
 
+
+
 const ServiceDetail = () => {
     const { serviceId } = useParams();
   const navigate = useNavigate();
@@ -107,8 +109,62 @@ const ServiceDetail = () => {
 
   const service = servicesData[serviceId] || servicesData['bim-for-architecture'];
 
+  // Get unique content for each course
+  const getCourseContent = (courseId) => {
+    switch(courseId) {
+      case 'bim-for-architecture':
+        return {
+          subtitle: "Transform Architectural Design with BIM",
+          description: "Master intelligent building design using industry-leading BIM software. Create stunning 3D models and collaborate seamlessly with engineering teams."
+        };
+      case 'bim-for-construction':
+        return {
+          subtitle: "Lead Construction Projects with Digital Excellence",
+          description: "Become a construction management expert with advanced BIM methodologies. Master 4D scheduling and deliver projects on time and budget."
+        };
+      case 'bim-for-infrastructure':
+        return {
+          subtitle: "Engineer the Infrastructure of Tomorrow",
+          description: "Design large-scale infrastructure projects with precision BIM workflows. Coordinate multidisciplinary teams and deliver sustainable solutions."
+        };
+      default:
+        return {
+          subtitle: "Master the Future of Design & Construction",
+          description: "Transform your career with industry-leading BIM training. Gain hands-on experience with cutting-edge tools and methodologies."
+        };
+    }
+  };
+
+  const courseContent = getCourseContent(serviceId);
+
+  // Get background image based on course
+  const getCourseBackground = (courseId) => {
+    switch(courseId) {
+      case 'bim-for-architecture':
+        return '/images/arch123.jpg';
+      case 'bim-for-construction':
+        return '/images/const123.jpg';
+      case 'bim-for-infrastructure':
+        return '/images/infra.jpg';
+      default:
+        return '/images/architecturalr.jpg';
+    }
+  };
+
   return (
     <div className="course-detail-page">
+      {/* Hero Section */}
+      <div className="course-hero-section" style={{ backgroundImage: `url(${getCourseBackground(serviceId)})` }}>
+        <div className="hero-overlay"></div>
+        <div className="hero-content hero-left">
+          <h1 className="hero-title">{service.title}</h1>
+          <p className="hero-subtitle">{courseContent.subtitle}</p>
+          <p className="hero-description">
+            {courseContent.description}
+          </p>
+        </div>
+      </div>
+      
       <div className="course-detail-container">
         <div className="course-detail-layout">
           <div className="course-content-left">

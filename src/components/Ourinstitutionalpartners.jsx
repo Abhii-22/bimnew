@@ -1,6 +1,10 @@
 import React from 'react';
 import './ourinstitutionalpartners.css';
 
+// Import main institutional logos
+import aicteLogo from '../assets/Logos/aicte.png';
+import vtuLogo from '../assets/Logos/VTU.jpg';
+
 // Import all college logos from assets folder
 import ambedkarLogo from '../assets/AMBEDKAR_COLLEGE-removebg-preview.png';
 import amruthaLogo from '../assets/AMRUTHA INSTITUTES.svg';
@@ -83,6 +87,25 @@ const Ourinstitutionalpartners = () => {
       <div className="institutional-header">
         <h2 className="institutional-title">Our Institutional Partners</h2>
       </div>
+      
+      {/* Main Institutional Logos */}
+      <div className="main-institutional-logos">
+        <div className="main-logo-item">
+          <img
+            src={aicteLogo}
+            alt="AICTE"
+            className="main-institutional-logo"
+          />
+        </div>
+        <div className="main-logo-item">
+          <img
+            src={vtuLogo}
+            alt="VTU"
+            className="main-institutional-logo"
+          />
+        </div>
+      </div>
+      
       <div className="institutional-scrolling-container">
         {duplicatedLogos.map((college, index) => (
           <div key={`${college.id}-${index}`} className="institutional-logo-item">
