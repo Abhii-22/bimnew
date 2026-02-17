@@ -6,7 +6,6 @@ import Home from './components/Home';
 import About from './components/About';
 import Feedback from './components/Feedback';
 import Contact from './components/Contact';
-import Course from './components/Course';
 import CourseDetail from './pages/CourseDetail';
 import PartnersSection from './components/PartnersSection';
 import OurAlumnies from './components/ouralumnies';
