@@ -6,14 +6,14 @@ function Feedback() {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     const testimonials = [
         {
-            quote: "It was fabulous, awesome having training with MEDINI School of design, the commitments were fulfilled as discussed on day one. The faculty was great and supportive. very happy with it. Will be definitely looking forward to do more course in early days. Thank you.",
+            quote: "It was fabulous, awesome having training with MEDINI TECHNOLOGIES, the commitments were fulfilled as discussed on day one. The faculty was great and supportive. very happy with it. Will be definitely looking forward to do more course in early days. Thank you.",
             author: "Srikanth Raghu",
             title: "Bim Captain",
             company: "ALSTOM Transport",
             rating: 5
         },
         {
-            quote: "Its an essential for the present day to have an added badge in our profile without which it will not show our interest in the technology we are into. I was knowing the software, but I came to know that knowing the software and getting professional in software has a huge difference. Which I learnt from MEDINI SCHOOL OF DESIGN (MSD), supported me and my team to undergo the training and get certified. Thank you to the team of Medini School of Design(MSD) for the support and patience, great to be a part of your trainings",
+            quote: "Its an essential for the present day to have an added badge in our profile without which it will not show our interest in the technology we are into. I was knowing the software, but I came to know that knowing the software and getting professional in software has a huge difference. Which I learnt from MEDINI TECHNOLOGIES, supported me and my team to undergo the training and get certified. Thank you to the team of Medini technologies for the support and patience, great to be a part of your trainings",
             author: "Bramarahmba M",
             title: "Design Engineer",
             company: "ATKINS",
