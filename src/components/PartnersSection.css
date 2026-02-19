@@ -153,16 +153,32 @@
   .partners-content {
     min-width: 0;
   }
-  .partners-title,
-  .partners-description {
+  .partners-title {
     text-align: left;
   }
+  .partners-description {
+    text-align: justify;
+  }
   .partners-scrolling-card {
-    width: 500px; /* Wider card */
-    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    margin: 0 auto;
+    overflow: hidden;
   }
   .partner-grid-tile {
-    width: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .partner-mini-card {
+    height: 70px;
+    width: 100%;
+  }
+  .partner-scrolling-logo {
+    max-height: 40px;
   }
 }
 
@@ -171,32 +187,48 @@
     font-size: 34px;
   }
   .partners-scrolling-card {
-    width: 400px; /* Wider card on small mobile */
-    height: 320px;
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
   }
   .partner-grid-tile {
-    width: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 12px;
   }
   .partner-mini-card {
-    height: 70px;
+    height: 60px;
+    width: 100%;
   }
   .partner-scrolling-logo {
-    max-height: 40px;
+    max-height: 35px;
   }
 }
 
 @media (max-width: 480px) {
   .partners-scrolling-card {
-    width: 320px; /* Wider card on mobile */
+    width: 100%;
+    max-width: 300px;
     height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
   }
   .partner-grid-tile {
-    width: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 10px;
   }
   .partner-mini-card {
-    height: 60px;
+    height: 50px;
+    width: 100%;
   }
   .partner-scrolling-logo {
-    max-height: 32px;
+    max-height: 30px;
   }
 }

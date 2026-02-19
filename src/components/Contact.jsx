@@ -17,7 +17,7 @@ const Contact = () => {
           <div className="contact-info">
             <div className="info-item">
               <span className="info-icon">📍</span>
-              <p>XGCP+9J3, MRCR Layout, MC Layout, Vijayanagar, Bengaluru, Karnataka 560040</p>
+              <p>MRCR Layout, MC Layout, Vijayanagar, Bengaluru, Karnataka 560040</p>
             </div>
             <div className="info-item">
               <span className="info-icon">📧</span>

@@ -76,7 +76,26 @@ const About = () => {
           </div>
         </div>
 
-        {/* ========== SECTION 3: HIGHLIGHTS & STATS ========== */}
+        {/* ========== SECTION 3: MISSION & VISION ========== */}
+        <div className="mission-vision-section">
+          <div className="mission-card">
+            <div className="mission-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>
+              To empower professionals and students with cutting-edge BIM skills and knowledge, transforming the construction industry through innovative education and practical training. We strive to bridge the gap between academic learning and industry requirements, creating competent BIM professionals who can drive digital transformation in the built environment.
+            </p>
+          </div>
+          
+          <div className="vision-card">
+            <div className="vision-icon">🔮</div>
+            <h3>Our Vision</h3>
+            <p>
+              To become the global leader in BIM education, shaping the future of the construction industry by nurturing talent that embraces technology, sustainability, and innovation. We envision a world where every construction project is powered by skilled BIM professionals, creating smarter, more efficient, and sustainable built environments for generations to come.
+            </p>
+          </div>
+        </div>
+
+        {/* ========== SECTION 4: HIGHLIGHTS & STATS ========== */}
         <div className="about-extras animate-on-scroll">
           <div className="about-highlights">
             <div className="highlight-card">
