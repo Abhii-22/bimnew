@@ -311,31 +311,14 @@ const ServiceDetail = () => {
                 </div>
               )}
             </div>
-          </div>
-          
-          <div className="course-content-right">
-            <div className="course-image-container">
-              <img src={service.image || '/images/3D.jpg'} alt={service.title} className="course-image" />
-            </div>
-            <div className="sidebar-widget">
-              <div className="provider-summary">
-                <FaBuilding size={32} className="provider-icon" />
-                <h3>{service.curriculum ? 'Course Information' : 'Service Information'}</h3>
-              </div>
-              
-              <div className="provider-info">
-                <span className="provider-label">Provider </span>
-                <span className="provider-name">{service.provider || 'BIM Construct'}</span>
-              </div>
-              
-              <button 
-                className="enroll-now-btn"
-                onClick={() => window.open('https://register.medinitechnologies.in/', '_blank')}
-              >
-                <FaRocket size={18} />
-                {service.curriculum ? 'Enroll Now' : 'Get Started'}
-              </button>
-            </div>
+            
+            <button 
+              className="enroll-now-btn"
+              onClick={() => window.open('https://register.medinitechnologies.in/', '_blank')}
+            >
+              <FaRocket size={18} />
+              {service.curriculum ? 'Enroll Now' : 'Get Started'}
+            </button>
           </div>
         </div>
       </div>

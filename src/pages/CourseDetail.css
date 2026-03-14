@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chandara:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   --dark-bg: #1A1A1A;
@@ -15,7 +15,7 @@
   min-height: 100vh;
   padding: 0;
   color: var(--text-secondary);
-  font-family: 'Chandara', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Hero Section */
@@ -62,7 +62,6 @@
   font-weight: 400;
   margin: 1.5rem 0;
   line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   color: #ffffff;
 }
 
@@ -80,7 +79,6 @@
   border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -88,7 +86,6 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
   line-height: 1.2;
   color: #ffffff;
 }
@@ -97,15 +94,15 @@
   font-size: 1.5rem;
   font-weight: 400;
   opacity: 1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   margin: 0;
   color: #ffffff;
 }
 
 .course-detail-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 1rem 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem 1rem;
+  width: 100%;
 }
 
 .back-link {
@@ -138,6 +135,8 @@
   border: 1px solid var(--border-color);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   align-items: flex-start;
+  width: 100%;
+  max-width: none;
 }
 
 .course-content-left {
@@ -145,55 +144,15 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  overflow-y: auto;
-  max-height: calc(100vh - 150px);
-  padding-right: 15px;
+  overflow: visible;
+  padding-right: 0;
   position: relative;
 }
 
-.course-content-left::-webkit-scrollbar {
-  display: none;
-}
-
-.course-content-left {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.course-content-left::after {
-  content: '';
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 30px;
-  height: 30px;
-  border-right: 3px solid rgba(35, 65, 75, 0.3);
-  border-bottom: 3px solid rgba(35, 65, 75, 0.3);
-  animation: scrollIndicator 2s infinite;
-  pointer-events: none;
-  z-index: 10;
-}
-
-@keyframes scrollIndicator {
-  0% {
-    opacity: 0.3;
-    transform: translateX(-50%) rotate(45deg) translateY(0);
-  }
-  50% {
-    opacity: 0.8;
-    transform: translateX(-50%) rotate(45deg) translateY(5px);
-  }
-  100% {
-    opacity: 0.3;
-    transform: translateX(-50%) rotate(45deg) translateY(0);
-  }
-}
 
 .course-content-right {
-  flex: 0 0 500px;
-  position: sticky;
-  top: 80px;
+  flex: 0 0 400px;
+  position: static;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -287,9 +246,10 @@
 
 .info-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 3rem;
+  width: 100%;
 }
 
 .info-card {
@@ -389,6 +349,7 @@
   overflow: hidden;
   color: var(--text-secondary);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .curriculum li::before {
@@ -514,7 +475,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -601,6 +561,7 @@
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-left: 2rem;
+  width: 100%;
 }
 
 .outcome-card {
@@ -615,6 +576,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .outcome-card::before {
@@ -735,8 +697,9 @@
 
 .benefits-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  width: 100%;
 }
 
 .benefit-card {
@@ -751,6 +714,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .benefit-card::before {
@@ -930,16 +894,17 @@
 }
 
 .enroll-now-btn {
-  width: 100%;
+  width: auto;
+  max-width: 500px;
   background: linear-gradient(135deg, #60a5fa, rgb(35, 65, 75), #06b6d4);
   color: white;
   border: none;
-  padding: 1.2rem 2rem;
+  padding: 1.5rem 3rem;
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;

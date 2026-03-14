@@ -53,6 +53,7 @@
   padding: 0.3rem 2rem; /* Added horizontal padding */
   max-width: 1400px;
   margin: 0 auto;
+  align-items: center; /* Add vertical alignment for list items */
 }
 
 /* Logo */
@@ -121,6 +122,9 @@
   gap: 0.5rem;
   white-space: nowrap;
   cursor: pointer;
+  height: auto;
+  line-height: 1;
+  box-sizing: border-box;
 }
 
 .course-dropdown-btn:hover {
