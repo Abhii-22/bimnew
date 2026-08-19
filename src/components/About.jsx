@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { FaBullseye, FaGem, FaGraduationCap, FaTools, FaChartLine } from 'react-icons/fa';
 import './About.css';
 
 const About = () => {
@@ -79,15 +80,15 @@ const About = () => {
         {/* ========== SECTION 3: MISSION & VISION ========== */}
         <div className="mission-vision-section">
           <div className="mission-card">
-            <div className="mission-icon">🎯</div>
+            <div className="mission-icon"><FaBullseye /></div>
             <h3>Our Mission</h3>
             <p>
               To empower professionals and students with cutting-edge BIM skills and knowledge, transforming the construction industry through innovative education and practical training. We strive to bridge the gap between academic learning and industry requirements, creating competent BIM professionals who can drive digital transformation in the built environment.
             </p>
           </div>
-          
+
           <div className="vision-card">
-            <div className="vision-icon">🔮</div>
+            <div className="vision-icon"><FaGem /></div>
             <h3>Our Vision</h3>
             <p>
               To become the global leader in BIM education, shaping the future of the construction industry by nurturing talent that embraces technology, sustainability, and innovation. We envision a world where every construction project is powered by skilled BIM professionals, creating smarter, more efficient, and sustainable built environments for generations to come.
@@ -99,15 +100,15 @@ const About = () => {
         <div className="about-extras animate-on-scroll">
           <div className="about-highlights">
             <div className="highlight-card">
-              <h3>🎓 Expert-Led Instruction</h3>
+              <h3><FaGraduationCap className="highlight-icon" /> Expert-Led Instruction</h3>
               <p>Learn from seasoned industry professionals who bring real-world experience to the classroom.</p>
             </div>
             <div className="highlight-card">
-              <h3>🛠️ Hands-On Projects</h3>
+              <h3><FaTools className="highlight-icon" /> Hands-On Projects</h3>
               <p>Apply your skills to practical projects that mirror the challenges of a real construction site.</p>
             </div>
             <div className="highlight-card">
-              <h3>📈 Career-Focused Curriculum</h3>
+              <h3><FaChartLine className="highlight-icon" /> Career-Focused Curriculum</h3>
               <p>Our courses are tailored to meet industry demands and help you achieve your career goals.</p>
             </div>
           </div>

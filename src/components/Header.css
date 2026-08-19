@@ -5,7 +5,6 @@
   z-index: 1000;
   width: 100%;
   background: rgb(35, 65, 75);
-  backdrop-filter: blur(20px);
   padding: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -13,19 +12,7 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
-  backdrop-filter: blur(10px);
-  z-index: -1;
-}
-
-/* Navigation container */
+/* Top bar: logo + Get Started */
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -33,27 +20,7 @@
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  padding: 0.5rem 2rem;
-}
-
-/* Secondary navigation */
-.secondary-nav {
-  background: rgb(64, 109, 110);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.secondary-nav ul {
-  display: flex;
-  justify-content: flex-start; /* Changed from center to left */
-  gap: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0.3rem 2rem; /* Added horizontal padding */
-  max-width: 1400px;
-  margin: 0 auto;
-  align-items: center; /* Add vertical alignment for list items */
+  padding: 0.75rem 2rem;
 }
 
 /* Logo */
@@ -64,79 +31,144 @@
   padding: 0.5rem 0;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
 .logo-image {
-  height: 40px; /* Adjust height as needed */
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
 .medini-logo {
-  height: 55px; /* Adjust height to be proportional */
+  height: 55px;
 }
 
 .logo:hover .logo-image {
   transform: scale(1.05);
 }
 
-/* Menu items */
-.secondary-nav a {
-  color: rgba(255, 255, 255, 0.8);
+/* Get Started button */
+.get-started-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgb(247, 224, 168);
+  color: rgb(35, 65, 75);
   text-decoration: none;
   font-weight: 700;
-  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  padding: 0.65rem 1.5rem;
   border-radius: 50px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.get-started-btn:hover {
+  background: rgb(250, 234, 190);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(247, 224, 168, 0.4);
+}
+
+.get-started-icon {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.get-started-btn:hover .get-started-icon {
+  transform: translateX(3px);
+}
+
+/* Secondary navigation */
+.secondary-nav {
+  background:rgb(64, 110, 110);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.3rem 2rem;
+}
+
+.nav-links-left,
+.nav-links-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu items */
+.secondary-nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
   font-size: 1rem;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
 }
 
-/* Course dropdown */
+.secondary-nav a:hover {
+  color: #fff;
+}
+
+.secondary-nav a.active {
+  color: rgb(232, 130, 60);
+}
+
+.secondary-nav a.active::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.4rem;
+  height: 2px;
+  background: rgb(232, 130, 60);
+  border-radius: 2px;
+}
+
+/* Course/Services dropdown */
 .course-dropdown {
   position: relative;
 }
 
 .course-dropdown-btn {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   background: none;
   border: none;
   font-weight: 700;
-  padding: 0.5rem 1.25rem;
-  border-radius: 50px;
+  padding: 0.75rem 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
   font-size: 1rem;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
   cursor: pointer;
-  height: auto;
   line-height: 1;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: inherit;
 }
 
 .course-dropdown-btn:hover {
   color: #fff;
-  background: rgb(35, 65, 75);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(35, 65, 75, 0.3);
 }
 
 .dropdown-arrow {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   transition: transform 0.3s ease;
 }
 
@@ -148,18 +180,19 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgb(35, 65, 75);
-  backdrop-filter: blur(20px);
+  min-width: 280px;
+  margin-top: 0.5rem;
+  background: rgb(255, 255, 255);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  min-width: 280px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  margin-top: 0.5rem;
+  /* color:rgb(17, 24, 39); */
+  
 }
 
 .dropdown-menu.open {
@@ -169,18 +202,19 @@
 }
 
 .dropdown-item {
+  display: block;
   width: 100%;
   background: none;
   border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 0.75rem 1.25rem;
   text-align: left;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  display: block;
-  color: #fff;
+  color: rgb(17, 24, 39);
   font-weight: 600;
   font-size: 0.9rem;
+  font-family: inherit;
 }
 
 .dropdown-item:last-child {
@@ -188,42 +222,11 @@
 }
 
 .dropdown-item:hover {
-  background: rgba(59, 130, 246, 0.1);
-}
-
-.nav-icon {
-  font-size: 1.1rem;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
-  transition: transform 0.3s ease;
-  margin-right: 0.5rem; /* Add space between icon and text */
-}
-
-.secondary-nav a:hover .nav-icon {
-  transform: scale(1.2);
-}
-
-.secondary-nav a:hover {
-  color: #fff;
-  background: rgb(35, 65, 75);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(35, 65, 75, 0.3);
-}
-
-.secondary-nav a:active {
-  transform: translateY(0);
-}
-
-/* Active state for current page */
-.secondary-nav a.active {
-  background: rgb(35, 65, 75);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(35, 65, 75, 0.3);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Scroll effect */
 .header.scrolled {
-  background: rgb(35, 65, 75);
-  backdrop-filter: blur(20px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -231,18 +234,12 @@
   padding: 0.5rem 2rem;
 }
 
-.header.scrolled .logo {
-  font-size: 1.9rem;
-  padding: 0.3rem 0;
+.header.scrolled .medini-logo {
+  height: 45px;
 }
 
-.header.scrolled .secondary-nav a {
-  padding: 0.7rem 1.3rem;
-  font-size: 0.95rem;
-}
-
-.header.scrolled .course-dropdown-btn {
-  padding: 0.7rem 1.3rem;
+.header.scrolled .get-started-btn {
+  padding: 0.55rem 1.3rem;
   font-size: 0.95rem;
 }
 
@@ -257,7 +254,6 @@
   padding: 0.75rem;
   border-radius: 12px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
 .mobile-menu-btn:hover {
@@ -272,7 +268,7 @@
     padding: 0.75rem 1.5rem;
     justify-content: space-between;
   }
-  
+
   .secondary-nav {
     position: relative;
   }
@@ -281,60 +277,72 @@
     display: block;
   }
 
-  .secondary-nav ul {
+  .get-started-btn span {
+    display: none;
+  }
+
+  .get-started-btn {
+    padding: 0.65rem 0.9rem;
+  }
+
+  .nav-links-wrapper {
     position: fixed;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgb(35, 65, 75);
-    backdrop-filter: blur(20px);
     flex-direction: column;
-    gap: 0;
-    padding: 2rem 1rem;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    background: rgb(35, 65, 75);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0 0 20px 20px;
-    align-items: flex-start;
   }
 
-  .secondary-nav ul.active {
+  .nav-links-wrapper.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
 
+  .nav-links-left,
+  .nav-links-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-links-right {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   .secondary-nav a {
-    padding: 1rem 2rem;
-    margin: 0.25rem 1rem;
-    border-radius: 12px;
-    text-align: left;
+    width: 100%;
+    padding: 0.9rem 1rem;
     font-size: 1rem;
+  }
+
+  .secondary-nav a.active::after {
+    left: 1rem;
+    right: auto;
+    width: 24px;
   }
 
   .course-dropdown-btn {
-    padding: 1rem 2rem;
-    margin: 0.25rem 1rem;
-    border-radius: 12px;
-    text-align: left;
-    font-size: 1rem;
     width: 100%;
+    padding: 0.9rem 1rem;
     justify-content: flex-start;
-  }
-
-  .logo {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .medini-logo {
     height: 40px;
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
   }
 }
 
@@ -342,13 +350,8 @@
   .main-nav {
     padding: 0.5rem 1rem;
   }
-  
+
   .medini-logo {
     height: 35px;
-  }
-  
-  .secondary-nav a {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
   }
 }

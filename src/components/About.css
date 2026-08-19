@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Chandara:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 .about-section {
   background: white;
   color: #000000;
   padding: 6rem 2rem;
-  font-family: 'Chandara', sans-serif;
+  font-family: 'Poppins', sans-serif;
   width: 100%;
 }
 
@@ -35,11 +35,15 @@
   font-size: 3rem;
   font-weight: 800;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #60a5fa, rgb(35, 65, 75), #06b6d4);
+  color: rgb(35, 65, 75);
+  margin-bottom: 1rem;
+}
+
+.about-heading span {
+  background: linear-gradient(135deg, rgb(26, 26, 25), rgb(122, 121, 118));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
 }
 
 .about-intro-animated {
@@ -53,14 +57,21 @@
   display: inline-block;
   width: 10px;
   height: 1.2rem;
-  background-color: #3b82f6;
+  background-color: rgb(232, 130, 60);
   margin-left: 5px;
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .about-hero-image img {
@@ -119,7 +130,8 @@
   padding: 0 1rem;
 }
 
-.mission-card, .vision-card {
+.mission-card,
+.vision-card {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   border-radius: 20px;
   padding: 3rem 2.5rem;
@@ -137,7 +149,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  background: linear-gradient(90deg, rgb(35, 65, 75), rgb(94, 133, 124));
 }
 
 .vision-card::before {
@@ -147,30 +159,42 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  background: linear-gradient(90deg, rgb(232, 130, 60), rgb(247, 224, 168));
 }
 
-.mission-card:hover, .vision-card:hover {
+.mission-card:hover,
+.vision-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.mission-icon, .vision-icon {
+.mission-icon,
+.vision-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
   display: block;
 }
 
-.mission-card h3, .vision-card h3 {
+.mission-icon {
+  color: rgb(35, 65, 75);
+}
+
+.vision-icon {
+  color: rgb(232, 130, 60);
+}
+
+.mission-card h3,
+.vision-card h3 {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e293b;
+  color: rgb(35, 65, 75);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.mission-card p, .vision-card p {
+.mission-card p,
+.vision-card p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #475569;
@@ -188,17 +212,19 @@
 
 .highlight-card {
   flex: 1;
-  background: #f0f8ff;
-  border-left: 4px solid #3b82f6;
+  background: rgba(94, 133, 124, 0.08);
+  border-left: 4px solid rgb(35, 65, 75);
   padding: 1.5rem;
   border-radius: 12px;
   transition: 0.3s;
-  border: 1px solid #e0e7ff;
+  border-top: 1px solid rgba(94, 133, 124, 0.25);
+  border-right: 1px solid rgba(94, 133, 124, 0.25);
+  border-bottom: 1px solid rgba(94, 133, 124, 0.25);
 }
 
 .highlight-card:hover {
   transform: translateY(-8px);
-  background: #e6f3ff;
+  background: rgba(94, 133, 124, 0.15);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -206,6 +232,15 @@
   color: rgb(35, 65, 75);
   font-weight: 700;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlight-icon {
+  font-size: 1.2rem;
+  color: rgb(232, 130, 60);
+  flex-shrink: 0;
 }
 
 .highlight-card p {
@@ -223,10 +258,10 @@
   flex: 1;
   min-width: 200px;
   text-align: center;
-  background: #f0f8ff;
+  background: rgba(247, 224, 168, 0.2);
   padding: 1.5rem;
   border-radius: 12px;
-  border: 1px solid #e0e7ff;
+  border: 1px solid rgba(232, 130, 60, 0.25);
   transition: 0.3s ease;
 }
 
@@ -260,6 +295,7 @@
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
+
   .about-hero,
   .about-main {
     grid-template-columns: 1fr;
@@ -271,11 +307,13 @@
     gap: 2rem;
   }
 
-  .mission-card, .vision-card {
+  .mission-card,
+  .vision-card {
     padding: 2rem 1.5rem;
   }
 
-  .about-highlights, .about-stats {
+  .about-highlights,
+  .about-stats {
     grid-template-columns: 1fr;
   }
 
