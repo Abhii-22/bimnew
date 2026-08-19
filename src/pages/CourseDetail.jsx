@@ -3,10 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FaClock, FaGraduationCap, FaUsers, FaClipboardCheck, FaRocket, FaCheckCircle, FaAward, FaStar, FaLightbulb, FaTrophy } from 'react-icons/fa';
 import './CourseDetail.css';
 
-
-
 const ServiceDetail = () => {
-    const { serviceId } = useParams();
+  const { serviceId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,14 +12,12 @@ const ServiceDetail = () => {
   }, []);
 
   const scrollToContact = () => {
-    // Navigate to contact page
     navigate('/contact');
   };
 
   const servicesData = {
-    // Course-style detail for BIM for Architecture
     'bim-for-architecture': {
-      title: 'BIM for Architecture',
+      title: 'BIM for Architecture: Advanced Building Information Modeling & Design',
       category: 'BIM for Architecture',
       description:
         'Comprehensive training in BIM workflows for architectural design, focusing on creating intelligent 3D models for better design visualization and coordination.',
@@ -49,7 +45,7 @@ const ServiceDetail = () => {
       ]
     },
     'bim-for-construction': {
-      title: 'BIM for Construction',
+      title: 'BIM for Construction: Digital Project Delivery & On-Site Execution',
       category: 'BIM for Construction',
       description:
         'Covers collaborative construction management, BIM standards, and on-site workflow optimization.',
@@ -77,7 +73,7 @@ const ServiceDetail = () => {
       ]
     },
     'bim-for-infrastructure': {
-      title: 'BIM for Infrastructure',
+      title: 'BIM for Infrastructure: Engineering Civil Utilities & Smart Transportation',
       category: 'BIM for Infrastructure',
       description:
         'Comprehensive training in BIM methodologies for infrastructure projects including roads, bridges, and utilities, with focus on 4D scheduling and clash detection.',
@@ -98,73 +94,95 @@ const ServiceDetail = () => {
         'Coordinate multidisciplinary infrastructure designs',
         'Create and manage 3D infrastructure models',
         'Develop and implement BIM execution plans'
-        
       ],
       prerequisites: [
         'Civil engineering background',
         'Basic 3D modeling experience'
       ]
-    },
+    }
   };
 
   const service = servicesData[serviceId] || servicesData['bim-for-architecture'];
 
-  // Get unique content for each course
   const getCourseContent = (courseId) => {
-    switch(courseId) {
+    switch (courseId) {
       case 'bim-for-architecture':
         return {
           subtitle: "Transform Architectural Design with BIM",
-          description: "Master intelligent building design using industry-leading BIM software. Create stunning 3D models and collaborate seamlessly with engineering teams."
+          description: "Master intelligent BIM workflows, parametric modeling, and coordinated design execution. Develop detailed architectural components, automated schedules, and energy simulations trusted by global AEC leaders.",
+          tags: ["Parametric Modeling", "Clash Detection", "Energy Analysis"]
         };
       case 'bim-for-construction':
         return {
           subtitle: "Lead Construction Projects with Digital Excellence",
-          description: "Become a construction management expert with advanced BIM methodologies. Master 4D scheduling and deliver projects on time and budget."
+          description: "Master digital site management, 4D construction scheduling, and automated quantity takeoffs. Coordinate cross-functional contractor teams and eliminate on-site project delays.",
+          tags: ["4D Scheduling", "Cost Estimation", "Site Coordination"]
         };
       case 'bim-for-infrastructure':
         return {
           subtitle: "Engineer the Infrastructure of Tomorrow",
-          description: "Design large-scale infrastructure projects with precision BIM workflows. Coordinate multidisciplinary teams and deliver sustainable solutions."
+          description: "Design large-scale civil infrastructure with precision BIM methodologies. Coordinate multidisciplinary networks, bridge designs, and lifecycle asset management seamlessly.",
+          tags: ["Civil Infrastructure", "Utility Networks", "Lifecycle Management"]
         };
       default:
         return {
           subtitle: "Master the Future of Design & Construction",
-          description: "Transform your career with industry-leading BIM training. Gain hands-on experience with cutting-edge tools and methodologies."
+          description: "Transform your career with industry-leading BIM training. Gain hands-on experience with cutting-edge tools and methodologies.",
+          tags: ["BIM Modeling", "Coordination", "Digital AEC"]
         };
     }
   };
 
   const courseContent = getCourseContent(serviceId);
 
-  // Get background image based on course
-  const getCourseBackground = (courseId) => {
-    switch(courseId) {
-      case 'bim-for-architecture':
-        return '/images/arch123.jpg';
-      case 'bim-for-construction':
-        return '/images/const123.jpg';
-      case 'bim-for-infrastructure':
-        return '/images/infra.jpg';
-      default:
-        return '/images/architecturalr.jpg';
-    }
-  };
-
   return (
     <div className="course-detail-page">
       {/* Hero Section */}
-      <div className="course-hero-section" style={{ backgroundImage: `url(${getCourseBackground(serviceId)})` }}>
-        <div className="hero-overlay"></div>
-        <div className="hero-content hero-left">
-          <h1 className="hero-title">{service.title}</h1>
-          <p className="hero-subtitle">{courseContent.subtitle}</p>
-          <p className="hero-description">
-            {courseContent.description}
-          </p>
+      <section className="course-hero-section">
+        <div className="hero-content">
+          {/* Left Column */}
+          <div className="hero-left">
+            <div className="hero-partner-badge">
+              <span className="badge-dot"></span>
+              Professional BIM Certification Program
+            </div>
+
+            <h1 className="hero-title">{service.title}</h1>
+
+            <p className="hero-description">
+              {courseContent.description}
+            </p>
+
+            <div className="hero-actions">
+              <button
+                className="hero-enroll-btn"
+                onClick={() => window.open('https://register.medinitechnologies.in/', '_blank')}
+              >
+                Enroll Now <span>→</span>
+              </button>
+              <button className="hero-learn-btn" onClick={scrollToContact}>
+                Learn more
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column - Laptop Mockup Screen with Floating Tags */}
+          <div className="hero-right">
+            <span className="floating-tag tag-top-left">{courseContent.tags[0]}</span>
+            <span className="floating-tag tag-top-right">{courseContent.tags[1]}</span>
+            <span className="floating-tag tag-bottom-right">{courseContent.tags[2]}</span>
+
+            <div className="laptop-mockup">
+              <div className="laptop-screen">
+                <img src={service.image} alt={service.title} />
+              </div>
+              <div className="laptop-base"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      
+      </section>
+
+      {/* Main Course Content */}
       <div className="course-detail-container">
         <div className="course-detail-layout">
           <div className="course-content-left">
@@ -173,7 +191,7 @@ const ServiceDetail = () => {
               <h1>{service.title}</h1>
               <p className="course-description">{service.description}</p>
             </div>
-            
+
             <div className="info-cards">
               {service.duration && service.level && service.audience ? (
                 <>
@@ -233,10 +251,10 @@ const ServiceDetail = () => {
                     <div className="outcomes-container">
                       {service.learningOutcomes.map((outcome, index) => {
                         const descriptions = {
-                          0: 'Master advanced BIM modeling techniques using industry-standard software like Revit and AutoCAD. Learn to create intelligent 3D models with accurate parametric components, develop complex building systems, and implement industry best practices for model organization, coordination, and documentation that meet professional standards.',
-                          1: 'Develop comprehensive analytical skills for building performance optimization using BIM tools. Learn to conduct energy analysis, daylighting studies, and sustainability assessments. Master clash detection workflows, interference checking, and create detailed reports for design optimization and decision-making processes.',
-                          2: 'Create professional construction documents directly from BIM models with precision and efficiency. Learn to generate detailed floor plans, elevations, sections, and construction drawings. Master scheduling, quantity takeoffs, cost estimation, and produce comprehensive documentation packages for construction projects.',
-                          3: 'Learn collaborative workflows and team coordination strategies using BIM 360 and cloud-based platforms. Master interdisciplinary coordination between architects, engineers, and contractors. Implement version control, change management, and develop effective communication protocols for successful project delivery.'
+                          0: 'Master advanced BIM modeling techniques and parametric workflows. Learn to create intelligent 3D building models with precise metadata, assemble coordinated architectural structures, and implement global BIM execution standards.',
+                          1: 'Develop comprehensive analytical skills for building performance optimization. Conduct automated clash detection workflows, perform sustainability evaluations, and create data-driven reports for engineering decisions.',
+                          2: 'Generate fully coordinated construction documentation directly from centralized BIM models. Produce accurate floor plans, sectional elevations, quantity takeoffs, and bill-of-materials with zero discrepancies.',
+                          3: 'Learn industry-standard collaborative workflows using cloud-based Common Data Environments (CDE). Coordinate interdisciplinary architectural and civil project teams with strict version control and change management protocols.'
                         };
                         return (
                           <div key={index} className="outcome-card">
@@ -264,19 +282,19 @@ const ServiceDetail = () => {
                       {[
                         {
                           title: "Industry Recognition",
-                          description: "Earn a certificate recognized by leading architecture and construction firms, validating your BIM expertise."
+                          description: "Earn a certificate recognized by leading architecture and civil engineering firms, validating your core BIM expertise."
                         },
                         {
                           title: "Career Advancement",
-                          description: "Open doors to higher-paying positions and leadership roles in BIM management and coordination."
+                          description: "Open doors to high-growth positions as a BIM Model Specialist, BIM Coordinator, or Digital Project Manager."
                         },
                         {
-                          title: "Practical Skills",
-                          description: "Gain hands-on experience with real-world projects and industry-standard BIM software tools."
+                          title: "Hands-On Practical Skills",
+                          description: "Work directly on live architectural and structural datasets adhering to real-world international BIM standards."
                         },
                         {
                           title: "Network Opportunities",
-                          description: "Connect with industry professionals and join a community of BIM practitioners and experts."
+                          description: "Connect with a growing network of AEC professionals, BIM managers, and certified industry leaders."
                         }
                       ].map((benefit, index) => (
                         <div key={index} className="benefit-card">
@@ -311,8 +329,8 @@ const ServiceDetail = () => {
                 </div>
               )}
             </div>
-            
-            <button 
+
+            <button
               className="enroll-now-btn"
               onClick={() => window.open('https://register.medinitechnologies.in/', '_blank')}
             >

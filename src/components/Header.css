@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 /* Header */
 .header {
   position: fixed;
@@ -9,7 +11,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* Top bar: logo + Get Started */
@@ -17,10 +19,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   position: relative;
-  padding: 0.75rem 2rem;
+  padding: 0.50rem 2rem 0.50rem 1rem;
 }
 
 /* Logo */
@@ -29,15 +31,17 @@
   align-items: center;
   text-decoration: none;
   padding: 0.5rem 0;
+  margin-left: 0.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .logo-image {
-  height: 40px;
+  height: 34px;
   transition: transform 0.3s ease;
 }
 
 .medini-logo {
-  height: 55px;
+  height: 45px;
 }
 
 .logo:hover .logo-image {
@@ -52,6 +56,7 @@
   background: rgb(247, 224, 168);
   color: rgb(35, 65, 75);
   text-decoration: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.2px;
@@ -78,8 +83,8 @@
 
 /* Secondary navigation */
 .secondary-nav {
-  background:rgb(64, 110, 110);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgb(64, 110, 110);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -89,7 +94,7 @@
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0.3rem 2rem;
+  padding: 0.0rem 1rem;
 }
 
 .nav-links-left,
@@ -104,9 +109,10 @@
 
 /* Menu items */
 .secondary-nav a {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
   padding: 0.75rem 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -119,11 +125,11 @@
 }
 
 .secondary-nav a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 .secondary-nav a.active {
-  color: rgb(232, 130, 60);
+  color: #ffffff;
 }
 
 .secondary-nav a.active::after {
@@ -133,7 +139,7 @@
   right: 1rem;
   bottom: 0.4rem;
   height: 2px;
-  background: rgb(232, 130, 60);
+  background: rgb(255, 254, 253);
   border-radius: 2px;
 }
 
@@ -143,10 +149,11 @@
 }
 
 .course-dropdown-btn {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   background: none;
   border: none;
-  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
   padding: 0.75rem 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -160,11 +167,10 @@
   line-height: 1;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: inherit;
 }
 
 .course-dropdown-btn:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 .dropdown-arrow {
@@ -191,8 +197,6 @@
   transform: translateY(-10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  /* color:rgb(17, 24, 39); */
-  
 }
 
 .dropdown-menu.open {
@@ -214,7 +218,7 @@
   color: rgb(17, 24, 39);
   font-weight: 600;
   font-size: 0.9rem;
-  font-family: inherit;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .dropdown-item:last-child {
@@ -231,11 +235,11 @@
 }
 
 .header.scrolled .main-nav {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem 0.5rem 1rem;
 }
 
 .header.scrolled .medini-logo {
-  height: 45px;
+  height: 36px;
 }
 
 .header.scrolled .get-started-btn {
@@ -265,7 +269,7 @@
 /* Responsive: Mobile */
 @media (max-width: 768px) {
   .main-nav {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.5rem 0.75rem 0.75rem;
     justify-content: space-between;
   }
 
@@ -342,16 +346,16 @@
   }
 
   .medini-logo {
-    height: 40px;
+    height: 32px;
   }
 }
 
 @media (max-width: 480px) {
   .main-nav {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
   }
 
   .medini-logo {
-    height: 35px;
+    height: 28px;
   }
 }
