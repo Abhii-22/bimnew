@@ -1,35 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
-:root {
-  --dark-bg: #1A1A1A;
-  --content-bg: #f8f9fa;
-  --border-color: #e9ecef;
-  --text-primary: rgb(0, 0, 0);
-  --text-secondary: rgb(107, 114, 128);
-  --accent-primary: #D4AF37;
-  --accent-secondary: #B8860B;
-}
-
-.course-detail-page {
-  background-color: white;
-  min-height: 100vh;
-  padding: 0;
-  color: var(--text-secondary);
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-}
-
-/* Base text typography fallback for general paragraphs */
-.course-detail-page p {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  color: rgb(107, 114, 128);
-}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 /* =========================================================
-   HERO SECTION (DARK THEMED WITH LAPTOP SCREEN MOCKUP)
+   HERO SECTION (ORIGINAL & UNTOUCHED)
    ========================================================= */
 .course-hero-section {
   position: relative;
@@ -60,7 +32,6 @@
   align-items: flex-start;
 }
 
-/* Partner / Program Badge */
 .hero-partner-badge {
   display: inline-flex;
   align-items: center;
@@ -84,7 +55,6 @@
   display: inline-block;
 }
 
-/* Hero Title */
 .hero-title {
   font-family: "Plus Jakarta Sans", sans-serif !important;
   font-style: normal !important;
@@ -96,7 +66,6 @@
   letter-spacing: -0.5px;
 }
 
-/* Hero Description */
 .hero-description {
   font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   font-style: normal;
@@ -109,7 +78,6 @@
   max-width: 580px;
 }
 
-/* Hero Action Buttons */
 .hero-actions {
   display: flex;
   align-items: center;
@@ -157,9 +125,6 @@
   color: #ffffff;
 }
 
-/* =========================================================
-   RIGHT SIDE - LAPTOP DEVICE FRAME + FLOATING TAGS
-   ========================================================= */
 .hero-right {
   position: relative;
   display: flex;
@@ -168,7 +133,6 @@
   width: 100%;
 }
 
-/* Floating Skill Pills */
 .floating-tag {
   position: absolute;
   background: rgba(255, 255, 255, 0.08);
@@ -183,22 +147,10 @@
   z-index: 10;
 }
 
-.tag-top-left {
-  top: -24px;
-  left: 20px;
-}
+.tag-top-left { top: -24px; left: 20px; }
+.tag-top-right { top: -40px; right: 0px; }
+.tag-bottom-right { bottom: -36px; right: 20px; }
 
-.tag-top-right {
-  top: -40px;
-  right: 0px;
-}
-
-.tag-bottom-right {
-  bottom: -36px;
-  right: 20px;
-}
-
-/* Laptop Mockup Display Structure */
 .laptop-mockup {
   width: 100%;
   max-width: 620px;
@@ -262,928 +214,252 @@
 }
 
 /* =========================================================
-   MAIN COURSE CONTENT
+   COMMON CONTAINER & SECTION TYPOGRAPHY
    ========================================================= */
-.course-detail-container {
-  max-width: 100%;
-  margin: 0;
-  padding: 2rem 1rem;
-  width: 100%;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  color: var(--text-primary);
-  text-decoration: none;
+.course-detail-page {
+  background-color: #ffffff;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  background: var(--content-bg);
-  border-radius: 50px;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  color: #111827;
+  overflow-x: hidden;
 }
 
-.back-link:hover {
-  background: var(--border-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.custom-section-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5.5rem 2.5rem 2.5rem;
+  box-sizing: border-box;
 }
 
-.course-detail-layout {
-  display: flex;
-  gap: 3rem;
-  background: var(--content-bg);
-  border-radius: 20px;
-  padding: 3rem;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  align-items: flex-start;
-  width: 100%;
-  max-width: none;
+.custom-section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.25;
+  color: #000000;
+  margin: 0 0 3rem 0;
+  text-align: left;
+  letter-spacing: -0.5px;
 }
 
-.course-content-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  overflow: visible;
-  padding-right: 0;
-  position: relative;
-}
-
-.course-content-right {
-  flex: 0 0 400px;
-  position: static;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-self: flex-start;
-}
-
-.course-image-container {
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.course-image-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-}
-
-.course-image-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(35, 65, 75, 0.1) 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.course-image-container:hover::after {
-  opacity: 1;
-}
-
-.course-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1);
-}
-
-.course-image:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-}
-
-.course-detail-content {
+/* =========================================================
+   SECTION 1: CAPABILITIES CARDS
+   ========================================================= */
+.capabilities-grid {
   display: grid;
-  grid-template-columns: 2.5fr 1fr;
-  gap: 3rem;
-  background: var(--content-bg);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.capability-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 20px;
-  padding: 3rem;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* Main Heading */
-.course-main-content h1 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 60px;
-  line-height: 60px;
-  text-align: left;
-  margin-bottom: 1rem;
-  color: rgb(0, 0, 0);
-}
-
-.course-category {
-  display: inline-block;
-  background: rgb(35, 66, 76);
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border-radius: 25px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.2);
-}
-
-.course-description {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  text-align: left;
-  color: rgb(107, 114, 128);
-  margin-bottom: 2.5rem;
-}
-
-/* Info Cards */
-.info-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  width: 100%;
-}
-
-.info-card {
-  background: white;
-  border: none;
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.info-icon {
-  color: rgb(107, 114, 128);
-  margin-bottom: 1rem;
+.capability-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
 }
 
-.info-card::before {
-  display: none;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.info-card span {
-  display: block;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.info-card strong {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.curriculum h2,
-.learning-outcomes h2,
-.course-benefits h2 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 2rem;
-  text-align: left;
-  margin-bottom: 2.5rem;
-  color: rgb(0, 0, 0);
-  position: relative;
-}
-
-.curriculum h2::after,
-.learning-outcomes h2::after,
-.course-benefits h2::after {
-  display: none;
-}
-
-.curriculum ul {
-  list-style: none;
-  padding: 0;
-}
-
-.curriculum li {
-  background: white;
-  border: none;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  color: rgb(107, 114, 128);
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+.capability-img-wrapper {
   width: 100%;
-}
-
-.curriculum li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(135deg, #60a5fa, rgb(35, 65, 75), #06b6d4);
-}
-
-.curriculum li:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
-  color: var(--text-primary);
-}
-
-.curriculum li span {
-  background: linear-gradient(135deg, #60a5fa, rgb(35, 65, 75), #06b6d4);
-  color: white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1.5rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.2);
-}
-
-.curriculum-contact {
-  margin-top: 2rem;
-  padding: 3rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f1f3f5 100%);
-  border-radius: 24px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  aspect-ratio: 16 / 10;
+  background: #f3f4f6;
   overflow: hidden;
-  margin-left: 2rem;
+  border-bottom: 1px solid #f1f5f9;
 }
 
-.curriculum-contact::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #60a5fa, rgb(35, 65, 75), #06b6d4);
-  padding: 2px;
-  border-radius: 24px;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: xor;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.curriculum-contact::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.5;
-  }
-}
-
-.curriculum-contact:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.curriculum-contact:hover::before {
-  opacity: 1;
-}
-
-.curriculum-contact:hover::after {
-  opacity: 1;
-}
-
-.curriculum-contact-text {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  text-align: center;
-  color: rgb(107, 114, 128);
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-
-.curriculum-contact:hover .curriculum-contact-text {
-  color: var(--text-primary);
-}
-
-.contact-us-btn {
-  background: rgb(35, 66, 76);
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.contact-us-btn:active {
-  transform: translateY(0);
-}
-
-.curriculum-contact-btn {
-  background: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%);
-  color: white;
-  border: none;
-  padding: 1.4rem 3rem;
-  border-radius: 20px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3), 0 3px 10px rgba(16, 185, 129, 0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  position: relative;
-  overflow: hidden;
-}
-
-.curriculum-contact-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
+.capability-img-wrapper img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
+  object-fit: cover;
+  display: block;
 }
 
-.curriculum-contact-btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-}
-
-.curriculum-contact-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-}
-
-.curriculum-contact-btn:hover::before {
-  left: 100%;
-}
-
-.curriculum-contact-btn:hover::after {
-  width: 300px;
-  height: 300px;
-}
-
-.curriculum-contact-btn:active {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3), 0 3px 10px rgba(16, 185, 129, 0.2);
-}
-
-.outcomes-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-left: 2rem;
-  width: 100%;
-}
-
-.outcome-card {
-  background: white;
-  border: none;
-  border-radius: 20px;
-  padding: 2rem;
+.capability-body {
+  padding: 1.85rem 1.6rem;
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  width: 100%;
-}
-
-.outcome-card::before {
-  display: none;
-}
-
-.outcome-card::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(107, 114, 128, 0.08) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  animation: pulse 4s ease-in-out infinite;
-}
-
-.outcome-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(107, 114, 128, 0.15);
-}
-
-.outcome-card:hover::after {
-  opacity: 1;
-}
-
-.outcome-icon {
-  width: 60px;
-  height: 60px;
-  background: transparent;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(107, 114, 128);
-  box-shadow: none;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.outcome-card:hover .outcome-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.outcome-content {
+  flex-direction: column;
+  text-align: left;
   flex: 1;
 }
 
-.outcome-content h4 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-align: left;
-  color: rgb(0, 0, 0);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.outcome-content p {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  color: rgb(107, 114, 128);
-  margin: 0;
-  transition: color 0.3s ease;
-  text-align: left;
-}
-
-.outcome-card:hover .outcome-content p {
-  color: var(--text-primary);
-}
-
-.outcome-number {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border: 2px solid rgb(107, 114, 128);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.capability-card-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 21px;
   font-weight: 700;
-  font-size: 1.1rem;
-  color: rgb(107, 114, 128);
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+  color: #000000;
+  margin: 0 0 1rem 0;
 }
 
-.outcome-card:hover .outcome-number {
-  transform: scale(1.1);
+.capability-card-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0;
 }
 
-.benefits-container {
+/* =========================================================
+   SECTION 2: FEATURES CARDS (EXACT ICON EMBEDDING)
+   ========================================================= */
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 }
 
-.benefit-card {
-  background: white;
-  border: none;
-  border-radius: 16px;
-  padding: 1.5rem;
+.feature-card {
+  background: #eef7fc;
+  border: 1px solid #d4ebf8;
+  border-radius: 22px;
+  padding: 2.75rem 2.25rem;
+  min-height: 330px;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
-.benefit-card::before {
-  display: none;
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(35, 65, 75, 0.09);
 }
 
-.benefit-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
-}
-
-.benefit-icon {
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border-radius: 12px;
+/* Glassmorphic cyan badge matching the exact cropped image */
+.feature-icon-badge {
+  width: 72px;
+  height: 72px;
+  background: rgba(217, 243, 247, 0.85);
+  border: 2px solid #a7e5ee;
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(107, 114, 128);
-  box-shadow: none;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+  margin-bottom: 2.25rem;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(78, 178, 196, 0.15);
+  box-sizing: border-box;
 }
 
-.benefit-card:hover .benefit-icon {
-  transform: scale(1.05);
+.isometric-svg {
+  width: 44px;
+  height: 44px;
+  color: #000000;
 }
 
-.benefit-content {
-  flex: 1;
-}
-
-.benefit-content h4 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-align: left;
-  color: rgb(0, 0, 0);
-  margin-bottom: 0.5rem;
+.feature-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1.3;
+  color: #000000;
+  margin: 0 0 1rem 0;
 }
 
-.benefit-content p {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  color: rgb(107, 114, 128);
-  margin: 0;
-  transition: color 0.3s ease;
-  text-align: left;
-}
-
-.benefit-card:hover .benefit-content h4 {
-  color: #050505;
-}
-
-.benefit-card:hover .benefit-content p {
-  color: var(--text-primary);
-}
-
-.course-sidebar .sidebar-widget {
-  background: var(--content-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 2rem;
-}
-
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.provider-icon {
-  color: rgb(107, 114, 128);
-}
-
-.sidebar-widget h3 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.8rem;
-  text-align: left;
-  color: rgb(0, 0, 0);
+.feature-card-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #374151;
   margin: 0;
 }
 
-.provider-info {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+/* =========================================================
+   SECTION 3: FAQ ACCORDION
+   ========================================================= */
+.custom-faq-container {
+  padding-bottom: 6.5rem;
 }
 
-.provider-label {
+.faq-tab-bar {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.faq-tab-active {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 15px;
+  color: #000000;
+  padding: 0.5rem 0.2rem 0.75rem 0.2rem;
+  position: relative;
+  margin-bottom: -2px;
+  border-bottom: 3px solid #0284c7;
 }
 
-.provider-name {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  color: var(--text-primary);
-  font-size: 1.1rem;
+.faq-accordion-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
 }
 
-.prerequisites-section h4 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 1.6rem 2rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.faq-question-btn:hover {
+  background-color: #fafafa;
+}
+
+.faq-question-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
   font-weight: 600;
-  font-size: 1.3rem;
-  text-align: left;
-  margin-bottom: 1.5rem;
-  color: rgb(0, 0, 0);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  color: #000000;
+  padding-right: 1.5rem;
 }
 
-.prerequisites-section ul {
-  list-style: none;
-  padding: 0;
-  color: var(--text-secondary);
-}
-
-.prerequisites-section ul li {
-  padding: 1rem;
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 0.75rem;
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  color: rgb(107, 114, 128);
-  text-align: left;
-  border-left: 4px solid rgb(107, 114, 128);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.prerequisites-section ul li:hover {
-  transform: translateX(5px);
-  border-left-color: rgb(107, 114, 128);
-  color: var(--text-primary);
-  background: #f8f9fa;
-}
-
-.prereq-icon {
-  color: rgb(107, 114, 128);
+.faq-chevron {
+  color: #111827;
   flex-shrink: 0;
 }
 
-.enroll-now-btn {
-  width: auto;
-  max-width: 500px;
-  background: rgb(35, 66, 76);
-  color: white;
-  border: none;
-  padding: 1.5rem 3rem;
-  border-radius: 12px;
+.faq-answer-body {
+  padding: 0 2rem 1.6rem 2rem;
+  text-align: left;
+}
+
+.faq-answer-body p {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  margin: 2rem auto 0;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  box-shadow: 0 8px 25px rgba(96, 165, 250, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
 }
 
-.enroll-now-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(96, 165, 250, 0.3);
-}
-
-.enroll-now-btn:active {
-  transform: translateY(-1px);
-}
-
-.service-header {
-  margin-bottom: 2.5rem;
-}
-
-.service-details-section h2 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.8rem;
-  text-align: left;
-  margin-bottom: 1.5rem;
-  color: rgb(0, 0, 0);
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.service-details-section h2::after {
-  display: none;
-}
-
-.service-details-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.service-detail-card {
-  background: var(--dark-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.service-detail-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent-primary);
-}
-
-.detail-icon {
-  color: rgb(107, 114, 128);
-  margin-bottom: 1rem;
-}
-
-.detail-content h3 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-align: left;
-  margin-bottom: 0.5rem;
-  color: rgb(0, 0, 0);
-}
-
-.detail-content p {
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  text-align: left;
-  color: rgb(107, 114, 128);
-}
-
-.provider-summary {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.provider-summary h3 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.4rem;
-  text-align: left;
-  color: rgb(0, 0, 0);
-}
-
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 1200px) {
-  .course-detail-layout {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .course-content-left {
-    max-height: none;
-    overflow-y: visible;
-    padding-right: 0;
-  }
-
-  .course-content-right {
-    flex: 1;
-    position: static;
-  }
-
-  .course-detail-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .course-sidebar .sidebar-widget {
-    position: static;
+  .capabilities-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1191,157 +467,38 @@
   .course-hero-section {
     padding: 6rem 2rem 3rem 2rem;
   }
-
   .hero-content {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-
   .hero-right {
     margin-top: 1.5rem;
   }
+}
 
-  .outcomes-grid {
+@media (max-width: 640px) {
+  .custom-section-container {
+    padding: 3.5rem 1.25rem 1.5rem;
+  }
+  .custom-section-title {
+    font-size: 28px;
+    margin-bottom: 2rem;
+  }
+  .capabilities-grid,
+  .features-grid {
     grid-template-columns: 1fr;
   }
-}
-
-.back-button-container {
-  text-align: left;
-  margin-top: 2.5rem;
-}
-
-.why-choose-us {
-  margin-bottom: 2rem;
-}
-
-.why-choose-us h4 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-align: left;
-  color: rgb(0, 0, 0);
-  margin-bottom: 1rem;
-}
-
-.why-choose-us ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.why-choose-us li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 27px;
-  color: rgb(107, 114, 128);
-}
-
-.why-choose-us li svg {
-  color: rgb(107, 114, 128);
-}
-
-@media (max-width: 768px) {
-  .course-hero-section {
-    padding: 5rem 1rem 3rem 1rem;
+  .feature-card {
+    padding: 2rem 1.5rem;
+    min-height: auto;
   }
-
-  .hero-title {
-    font-size: 32px !important;
+  .faq-question-btn {
+    padding: 1.25rem 1.25rem;
   }
-
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
+  .faq-answer-body {
+    padding: 0 1.25rem 1.25rem;
   }
-
-  .hero-enroll-btn,
-  .hero-learn-btn {
-    justify-content: center;
-  }
-
-  .floating-tag {
-    display: none;
-  }
-
-  .course-detail-page {
-    padding: 0;
-  }
-
-  .course-detail-layout {
-    flex-direction: column;
-    padding: 1.5rem;
-    border-radius: 16px;
-    gap: 1.5rem;
-  }
-
-  .course-content-left {
-    max-height: none;
-    overflow-y: visible;
-    padding-right: 0;
-  }
-
-  .course-content-right {
-    flex: 1;
-    position: static;
-  }
-
-  .course-detail-content {
-    padding: 1.5rem;
-    border-radius: 16px;
-  }
-
-  .course-main-content h1 {
-    font-size: 36px;
-    line-height: 40px;
-  }
-
-  .info-cards {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .outcome-card {
-    padding: 1.5rem;
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .outcome-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .outcome-number {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-
-  .outcome-content h4 {
-    font-size: 1.1rem;
-  }
-
-  .curriculum li {
-    padding: 1rem;
-  }
-
-  .curriculum li span {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-
-  .service-details-grid {
-    grid-template-columns: 1fr;
+  .faq-question-text {
+    font-size: 15px;
   }
 }

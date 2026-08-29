@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 .partners-section {
   width: 100%;
   padding: 90px 0;
   background: transparent;
-  font-family: 'Poppins', sans-serif;
 }
 
 .partners-container {
@@ -22,21 +23,23 @@
 
 .partners-title {
   margin: 0 0 18px;
-  font-size: 42px; /* Increased from 42px */
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-  font-weight: 800;
-  color: #0b1b2b;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: normal;
+  font-weight: 400;
+  color: #29354d;
   text-align: left;
+  font-family: 'Inter', sans-serif;
 }
 
 .partners-description {
   margin: 0;
-  font-size: 15px; /* Increased from 15px */
-  line-height: 1.8;
-  color: #5b6776;
+  font-size: 16px;
+  line-height: 27px;
+  color: #6b7280;
   text-align: justify;
   max-width: 560px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .partners-logos {
@@ -161,75 +164,54 @@
     text-align: justify;
   }
   .partners-scrolling-card {
-    width: 100%;
-    max-width: 400px;
-    height: 350px;
-    margin: 0 auto;
-    overflow: hidden;
+    width: 500px; /* Wider card */
+    height: 400px;
   }
   .partner-grid-tile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  .partners-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .partners-scrolling-card {
+    width: calc(100vw - 40px);
+    max-width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
+  .partner-grid-tile {
     width: 100%;
-    margin-bottom: 15px;
+    justify-content: space-between;
   }
   .partner-mini-card {
     height: 70px;
-    width: 100%;
+    width: 48%; /* Almost half width for 2 logos per row */
   }
   .partner-scrolling-logo {
     max-height: 40px;
   }
 }
 
-@media (max-width: 560px) {
-  .partners-title {
-    font-size: 34px;
-  }
-  .partners-scrolling-card {
-    width: 100%;
-    max-width: 350px;
-    height: 300px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  .partner-grid-tile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    width: 100%;
-    margin-bottom: 12px;
-  }
-  .partner-mini-card {
-    height: 60px;
-    width: 100%;
-  }
-  .partner-scrolling-logo {
-    max-height: 35px;
-  }
-}
-
 @media (max-width: 480px) {
   .partners-scrolling-card {
-    width: 100%;
+    width: calc(100vw - 30px);
     max-width: 300px;
     height: 250px;
     margin: 0 auto;
-    overflow: hidden;
   }
   .partner-grid-tile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
     width: 100%;
-    margin-bottom: 10px;
+    justify-content: space-between;
   }
   .partner-mini-card {
-    height: 50px;
-    width: 100%;
+    height: 60px;
+    width: 48%; /* Almost half width for 2 logos per row */
   }
   .partner-scrolling-logo {
-    max-height: 30px;
+    max-height: 32px;
   }
 }

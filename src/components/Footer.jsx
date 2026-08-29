@@ -7,14 +7,12 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-services">
-          <h4>Services</h4>
+          <h4>Courses</h4>
           <ul>
-            <li><a href="https://mediniedutech.com/" rel="noopener noreferrer">Medini EduTech</a> - Training and Certifications</li>
-            <li><a href="https://bimconstruct.in/"  rel="noopener noreferrer">BIM Construct</a> - Interior and Exterior Designing</li>
-            <li><a href="https://nalaneel.com/"  rel="noopener noreferrer">TechVruddhi</a> - Software Development</li>
-            <li><a href="https://eduphygital.com/"  rel="noopener noreferrer">EDUPHYGITAL</a> - Centre of Excellence</li>
-            <li><a href="https://digidhvani.com/"  rel="noopener noreferrer">DigiDhvani</a> - Digital Marketing</li>
-            <li><a href="https://builddspace.in/"  rel="noopener noreferrer">BuilddSpace</a> - Incubation Centre</li>
+            <li><a href="/service/bim-for-architecture" rel="noopener noreferrer">BIM for Architecture</a> </li>
+            <li><a href="/service/bim-for-construction"  rel="noopener noreferrer">BIM for Constructiont</a> </li>
+            <li><a href="/service/bim-for-infrastructure"  rel="noopener noreferrer">BIM for Infrastructure</a> </li>
+            
           
            
           </ul>
