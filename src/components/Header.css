@@ -94,7 +94,8 @@
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0.0rem 1rem;
+  /* Left padding offset aligned to the end of the "medini" logo text */
+  padding: 0.0rem 1rem 0.0rem 82px;
 }
 
 .nav-links-left,
