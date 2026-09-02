@@ -33,13 +33,36 @@ function Header() {
     }
   ];
 
-  // Right-side utility links
-  // const utilityLinks = [
-  //   { path: '/career', label: 'Career' },
-  //   { path: '/internship', label: 'Internship' },
-  //   { path: '/competitions', label: 'Competitions' },
-  //   { path: '/placements', label: 'Placements' }
-  // ];
+  const navItems = [
+    { path: "/", label: "Home", icon: <FiHome /> },
+    { path: "/about", label: "About", icon: <FiBookOpen /> },
+  ];
+
+  const contactItem = { path: "/contact", label: "Contact", icon: <FiMail /> };
+
+  useEffect(() => {
+    let timeoutId = null;
+    const controlVisibility = () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (typeof window !== "undefined") {
+          const currentScrollY = window.scrollY;
+          if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            setShowBottomNav(false);
+          } else {
+            setShowBottomNav(true);
+          }
+          setIsScrolled(currentScrollY > 10);
+          setLastScrollY(currentScrollY);
+        }
+      }, 10);
+    };
+    window.addEventListener("scroll", controlVisibility, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", controlVisibility);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -304,11 +327,70 @@ function Header() {
         >
           <img src={MediniIcon} alt="Medini Logo" className="medini-logo" style={{ width: isScrolled ? "100px" : "130px", height: isScrolled ? "38px" : "50px", objectFit: "contain", transition: "all 0.3s ease" }} />
         </Link>
+      </div>
 
-        {/* <Link to="/get-started" className="get-started-btn" onClick={closeMobileMenu}>
-          <span>Get Started</span>
-          <FaArrowRight className="get-started-icon" />
-        </Link> */}
+      {/* Top Navigation Bar */}
+      <nav style={{
+        background: "#23414b",
+        boxShadow: isScrolled ? "0 4px 20px rgba(0,0,0,0.35)" : "0 2px 10px rgba(0,0,0,0.2)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        transition: "box-shadow 0.3s ease"
+      }}>
+        <div style={{
+          maxWidth: "100%", margin: "0 auto",
+          padding: isScrolled ? "18px 24px" : "24px 24px",
+          display: "flex", justifyContent: "flex-end", alignItems: "center",
+          transition: "padding 0.3s ease"
+        }}>
+
+          {/* Right: Mobile btn only */}
+          <div style={{ display: "flex", alignItems: "center", gap: "20px", minWidth: "fit-content", flex: "0 0 auto" }}>
+            <button
+              onClick={toggleMobileMenu}
+              style={{ display: "none", padding: "12px", background: isMobileMenuOpen ? "rgba(255,255,255,0.15)" : "transparent", border: "none", cursor: "pointer", borderRadius: "8px", transition: "all 0.3s ease", position: "relative", width: "32px", height: "28px" }}
+              className="mobile-menu-btn"
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = isMobileMenuOpen ? "rgba(255,255,255,0.15)" : "transparent"; }}
+            >
+              <span style={{
+                position: "absolute",
+                width: "24px",
+                height: "2px",
+                background: "white",
+                borderRadius: "2px",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                transform: isMobileMenuOpen ? "rotate(45deg) translate(6px, 6px)" : "translateY(0)",
+                top: isMobileMenuOpen ? "13px" : "8px",
+                left: "4px"
+              }}></span>
+              <span style={{
+                position: "absolute",
+                width: "24px",
+                height: "2px",
+                background: "white",
+                borderRadius: "2px",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                opacity: isMobileMenuOpen ? "0" : "1",
+                transform: isMobileMenuOpen ? "translateX(10px)" : "translateX(0)",
+                top: "13px",
+                left: "4px"
+              }}></span>
+              <span style={{
+                position: "absolute",
+                width: "24px",
+                height: "2px",
+                background: "white",
+                borderRadius: "2px",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                transform: isMobileMenuOpen ? "rotate(-45deg) translate(6px, -6px)" : "translateY(0)",
+                top: isMobileMenuOpen ? "13px" : "18px",
+                left: "4px"
+              }}></span>
+            </button>
+          </div>
+        </div>
       </nav>
 
       {/* Bottom Navigation Bar */}
@@ -449,13 +531,35 @@ function Header() {
                 {item.label}
               </Link>
             </li>
-            <li className="course-dropdown">
-              <button className="course-dropdown-btn" onClick={toggleCourseDropdown}>
-                <span>Services</span>
-                <FaChevronDown className={`dropdown-arrow ${isCourseDropdownOpen ? 'open' : ''}`} />
-              </button>
-              <div className={`dropdown-menu ${isCourseDropdownOpen ? 'open' : ''}`}>
-                {courses.map((course) => (
+          ))}
+
+          {/* Mobile Services */}
+          <li style={{ animation: isMobileMenuOpen ? `slideIn 0.4s ease ${navItems.length * 0.08}s both` : "none" }}>
+            <button
+              onClick={toggleMobileCourses}
+              style={{
+                width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px",
+                padding: "13px 16px", borderRadius: "8px", fontSize: "1rem", fontWeight: "500",
+                color: isCoursesActive() ? "#23414b" : "#374151",
+                background: isCoursesActive() ? "rgba(35,65,75,0.08)" : "transparent",
+                transition: "all 0.25s ease",
+                border: isCoursesActive() ? "1px solid rgba(35,65,75,0.15)" : "1px solid transparent",
+                cursor: "pointer", fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.5px"
+              }}
+              onMouseEnter={(e) => { if (!isCoursesActive()) { e.currentTarget.style.background = "rgba(64,109,110,0.08)"; e.currentTarget.style.color = "#23414b"; } }}
+              onMouseLeave={(e) => { if (!isCoursesActive()) { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#374151"; } }}
+              aria-expanded={isMobileCoursesOpen}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <FiBookOpen style={{ fontSize: "17px", color: "#406d6e" }} />
+                Services
+              </div>
+              <FiChevronDown style={{ fontSize: "17px", color: "#406d6e", transform: isMobileCoursesOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }} />
+            </button>
+
+            {isMobileCoursesOpen && (
+              <div style={{ marginTop: "6px", paddingLeft: "12px" }}>
+                {courses.map((course, index) => (
                   <button
                     key={course.id}
                     onClick={() => handleCourseClick(course.id)}
@@ -480,47 +584,36 @@ function Header() {
                   </button>
                 ))}
               </div>
-            </li>
-            {/* <li>
-              <Link
-                to="/awards"
-                className={isActive('/awards') ? 'active' : ''}
-                onClick={closeMobileMenu}
-              >
-                <span>Awards</span>
-              </Link>
-            </li> */}
-            <li>
-              <Link
-                to="/contact"
-                className={isActive('/contact') ? 'active' : ''}
-                onClick={closeMobileMenu}
-              >
-                <span>Contact</span>
-              </Link>
-            </li>
-          </ul>
+            )}
+          </li>
 
-          {/* <ul className="nav-links-right">
-            {utilityLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className={isActive(link.path) ? 'active' : ''}
-                  onClick={closeMobileMenu}
-                >
-                  <span>{link.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul> */}
-        </div>
-      </nav>
+          {/* Contact — always last in mobile too */}
+          <li style={{ animation: isMobileMenuOpen ? `slideIn 0.4s ease ${(navItems.length + 1) * 0.08}s both` : "none" }}>
+            <Link
+              to={contactItem.path}
+              onClick={toggleMobileMenu}
+              style={{
+                display: "flex", alignItems: "center", gap: "12px",
+                padding: "13px 16px", borderRadius: "8px", textDecoration: "none",
+                fontSize: "1rem", fontWeight: "500",
+                color: isActive(contactItem.path) ? "#23414b" : "#374151",
+                background: isActive(contactItem.path) ? "rgba(35,65,75,0.08)" : "transparent",
+                transition: "all 0.25s ease",
+                border: isActive(contactItem.path) ? "1px solid rgba(35,65,75,0.15)" : "1px solid transparent",
+                fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: "0.5px"
+              }}
+              onMouseEnter={(e) => { if (!isActive(contactItem.path)) { e.currentTarget.style.background = "rgba(64,109,110,0.08)"; e.currentTarget.style.color = "#23414b"; } }}
+              onMouseLeave={(e) => { if (!isActive(contactItem.path)) { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#374151"; } }}
+            >
+              <span style={{ fontSize: "17px", color: "#406d6e" }}>{contactItem.icon}</span>
+              {contactItem.label}
+            </Link>
+          </li>
+
+        </ul>
+      </div>
     </header>
   );
 }
 
 export default Header;
-
-
-
