@@ -92,9 +92,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0.0rem 1rem;
+  width: 100%;
+  margin: 0; /* Ensures it never centers or moves on large screens */
+  /* Aligned precisely to the end of the 'i' in medini */
+  padding: 0.0rem 1rem 0.0rem 135px;
 }
 
 .nav-links-left,
