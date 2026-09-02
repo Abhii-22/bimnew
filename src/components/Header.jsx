@@ -29,14 +29,6 @@ const Header = () => {
     }
   ];
 
-  // Right-side utility links
-  // const utilityLinks = [
-  //   { path: '/career', label: 'Career' },
-  //   { path: '/internship', label: 'Internship' },
-  //   { path: '/competitions', label: 'Competitions' },
-  //   { path: '/placements', label: 'Placements' }
-  // ];
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -69,10 +61,8 @@ const Header = () => {
     closeMobileMenu();
 
     if (location.pathname === '/') {
-      // If already on home page, just scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // If on another page, navigate to home page and scroll to top
       navigate('/');
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -96,11 +86,6 @@ const Header = () => {
         <Link to="/" className="logo" onClick={closeMobileMenu}>
           <img src="/images/MEDINITECHNOLOGIESWHITE.png" alt="Medini Logo" className="logo-image medini-logo" />
         </Link>
-
-        {/* <Link to="/get-started" className="get-started-btn" onClick={closeMobileMenu}>
-          <span>Get Started</span>
-          <FaArrowRight className="get-started-icon" />
-        </Link> */}
       </nav>
 
       <nav className="secondary-nav">
@@ -141,15 +126,6 @@ const Header = () => {
                 ))}
               </div>
             </li>
-            {/* <li>
-              <Link
-                to="/awards"
-                className={isActive('/awards') ? 'active' : ''}
-                onClick={closeMobileMenu}
-              >
-                <span>Awards</span>
-              </Link>
-            </li> */}
             <li>
               <Link
                 to="/contact"
@@ -160,20 +136,6 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-
-          {/* <ul className="nav-links-right">
-            {utilityLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className={isActive(link.path) ? 'active' : ''}
-                  onClick={closeMobileMenu}
-                >
-                  <span>{link.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul> */}
         </div>
       </nav>
     </header>
