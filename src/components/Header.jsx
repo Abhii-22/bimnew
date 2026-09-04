@@ -111,7 +111,7 @@ const Header = () => {
             </li>
             <li className="course-dropdown">
               <button className="course-dropdown-btn" onClick={toggleCourseDropdown}>
-                <span>Courses</span>
+                <span>Courses</span>  
                 <FaChevronDown className={`dropdown-arrow ${isCourseDropdownOpen ? 'open' : ''}`} />
               </button>
               <div className={`dropdown-menu ${isCourseDropdownOpen ? 'open' : ''}`}>
